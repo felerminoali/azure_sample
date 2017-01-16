@@ -22,26 +22,7 @@
     <div id="outer">
         <div id="wrapper">
             <div id="left">
-                <h2>Navigation</h2>
-                <div class="dev br_td">&nbsp;</div>
-                <ul id="navigation">
-                    <li>
-                        <a href="/?page=catalogue">
-                            Catalogue
-                        </a>
-                    </li>
-                    <li>
-                        <a href="/?page=loans">
-                            Loans
-                        </a>
-                    </li>
-
-                    <li>
-                        <a href="/?page=account">
-                            My Account
-                        </a>
-                    </li>
-                </ul>
+                @Html.Partial("_LeftNav")
             </div>
             <div id="right">
                 @RenderBody()

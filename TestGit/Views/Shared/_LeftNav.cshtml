@@ -1,0 +1,29 @@
+﻿@using Microsoft.AspNet.Identity
+
+@if (Request.IsAuthenticated)
+{
+    <h2>Navigation</h2>
+    <div class="dev br_td">&nbsp;</div>
+    <ul id="navigation">
+        <li>
+            <a href="/?page=catalogue">
+                Catalogue
+            </a>
+        </li>
+        <li>
+            <a href="/?page=loans">
+                Loans
+            </a>
+        </li>
+
+        <li>
+            <a href="/?page=account">
+                My Account
+            </a>
+        </li>
+    </ul>
+}
+else
+{
+    <p></p>
+}
