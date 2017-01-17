@@ -83,7 +83,7 @@
 
             </div>
             <div class="catalogue_wrapper_right">
-                @*<h4>
+                <h4>
                         <a href="/?page=catalogue"></a>
                         <strong>
                             @item.title
@@ -95,23 +95,25 @@
                         <p>by: <u>@item.author</u></p>
                     }
 
-                    @if (item.year == null)
-                    {
-                        <p>@item.year</p>
-                    }
+                    @*
+
+                        @if (item.year == null)
+                        {
+                            <p>@item.year</p>
+                        }
 
 
 
-                    @if (item.publishing_date == null)
-                    {
-                        <p>@item.publishing_date</p>
-                    }
+                        @if (item.publishing_date == null)
+                        {
+                            <p>@item.publishing_date</p>
+                        }
 
 
-                    @if (item.description == null)
-                    {
-                        <p>@item.description.Substring(0, 120)+"..."</p>
-                    }*@
+                        @if (item.description == null)
+                        {
+                            <p>@item.description.Substring(0, 120)+"..."</p>
+                        }*@
 
             </div>
         </div>
