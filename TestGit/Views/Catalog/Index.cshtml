@@ -1,7 +1,9 @@
 ﻿@model IEnumerable<TestGit.Models.item>
+@using TestGit.Models;
 
 @{
     ViewBag.Title = "Catalog";
+    MyOpacDBContext db = new MyOpacDBContext();
 }
 
 <div class='container'>
@@ -71,13 +73,19 @@
 
     foreach (var item in Model)
     {
-        <p>Item 1</p>
-
         <div class="catalogue_wrapper">
             <div class="catalogue_wrapper_left">
 
+                @{
+                    string path = "~/media/catalogue/";
+                    string path_alt = "media/unavailable/";
+
+                    category cate = db.categories.Where(cat => cat.id.Equals(item.id)).Single();
+
+                    string image = (item.image != null) ? path + item.image : path_alt + cate.name;
+                }
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
-                    <img src="~/media/catalogue/@item.image" alt="image"
+                    <img src="~/media/catalogue/@image" alt="image_@cate.name"
                          width="120" />
                 </a>
 
@@ -111,19 +119,17 @@
 
 
                 @*@if (item.description != null)
-                {
-                    <p>@item.description.Substring(0, 120)+"..."</p>
-                }*@
+                    {
+                        <p>@item.description.Substring(0, 120)+"..."</p>
+                    }*@
 
             </div>
         </div>
-    }
-}
-else
-{
-    <div class="paging">
-        <p><strong>No catalogue</strong> found</p>
-    </div>
-}
-
-
+                        }
+                    }
+                    else
+                    {
+                        <div class="paging">
+                            <p><strong>No catalogue</strong> found</p>
+                        </div>
+                    }
