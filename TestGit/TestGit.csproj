@@ -238,6 +238,21 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="images\loadinfo.net.gif" />
+    <Content Include="images\sprite.png" />
+    <Content Include="media\catalogue\book2.png" />
+    <Content Include="media\catalogue\book3.png" />
+    <Content Include="media\catalogue\book4.png" />
+    <Content Include="media\catalogue\book5.png" />
+    <Content Include="media\catalogue\book6.png" />
+    <Content Include="media\catalogue\book7.png" />
+    <Content Include="media\catalogue\book8.png" />
+    <Content Include="media\catalogue\book9.png" />
+    <Content Include="media\catalogue\unavailable.png" />
+    <Content Include="media\unavailable\audio.png" />
+    <Content Include="media\unavailable\book.png" />
+    <Content Include="media\unavailable\periodicals.png" />
+    <Content Include="media\unavailable\video.png" />
     <Content Include="Models\DBContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>DBContext.edmx</DependentUpon>
