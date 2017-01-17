@@ -63,11 +63,11 @@
 @if (Model.Any())
 {
 
-    @*<div class="paging">
-            <?php echo $objPaging->getNumberFound(); ?>
-        </div>*@
+    <div class="paging">
+        @*paginas*@
+    </div>
 
-    <h1></h1>
+        <h1></h1>
 
     foreach (var item in Model)
     {
@@ -83,77 +83,36 @@
 
             </div>
             <div class="catalogue_wrapper_right">
-                <h4>
-                    <a href="/?page=catalogue"></a>
-                    <strong>
-                        @item.title
-                    </strong>
-                </h4>
+                @*<h4>
+                        <a href="/?page=catalogue"></a>
+                        <strong>
+                            @item.title
+                        </strong>
+                    </h4>
 
-                @if (item.author == null)
-                {
-                    <p>
-                        by: <u>@item.author</u>;
-                    </p>
+                    @if (item.author == null)
+                    {
+                        <p>by: <u>@item.author</u></p>
+                    }
 
-                }
-
-                @if (item.year == null)
-                {
-
-                    <p>
-                        @item.year
-                    </p>
-
-                }
+                    @if (item.year == null)
+                    {
+                        <p>@item.year</p>
+                    }
 
 
 
-                @if (item.publishing_date == null)
-                {
-
-                    <p>
-                        @item.publishing_date
-                    </p>
-
-                }
+                    @if (item.publishing_date == null)
+                    {
+                        <p>@item.publishing_date</p>
+                    }
 
 
-                @if (item.description == null)
-                {
-                    <p>@item.description.Substring(0, 120)+"..."</p>
-                }
+                    @if (item.description == null)
+                    {
+                        <p>@item.description.Substring(0, 120)+"..."</p>
+                    }*@
 
-
-
-
-                @*<p>
-                    <?php
-
-                    $message = $objCatalogue->is_item_available($row['id']) ? 'Available' : 'Not Available';
-                    $out = '<strong>'.$item_cat['name'].'</strong>';
-                    $out .= ': ' . $message;
-                    echo $out;
-                    ?>;
-                </p>
-
-                <p>
-                    <?php
-
-                    $user = Session::getSession(Login::$_login_front);
-                    $objReservation = new Reservation();
-                    $reservation = $objReservation->getReservationsByUserAndItem($user, $row['id']);
-
-                    if(empty($reservation)){
-                    echo Basket::activeButton($row['id']);
-                    }else{
-                    echo '
-                <p><a href="/?page=reservations" class="red">Item already reserved: Please check your reservation</a></p>';
-                }
-
-
-                ?>
-                </p>*@
             </div>
         </div>
     }
