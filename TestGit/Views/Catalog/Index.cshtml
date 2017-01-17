@@ -15,7 +15,7 @@
                     <tr>
                         <th><label for="search">Library catalog:</label></th>
                         <td>
-                            @Html.TextBox("search", null, new { @class = "fld", placeholder = "Keyword ...", value = "lllll" })
+                            <input type="text" name="search" value="<?php echo stripslashes($search); ?>" class="fld">
                         </td>
                         <td>
                             <label for="btn_add" class="sbm sbm_blue fl_l">
@@ -47,12 +47,13 @@
                                 <input type="checkbox" name="category[]"
                                        id="category_" @category.id
                                        value="@category.id" />
-                                <span>Audio</span>
+                                @*stick here*@
+                                <span>@category.name</span>
                             </li>
                         }
                     </ul>
                 }
-                
+
             </form>
 
         </div>
@@ -61,9 +62,100 @@
 
 @if (Model.Any())
 {
+
+    @*<div class="paging">
+            <?php echo $objPaging->getNumberFound(); ?>
+        </div>*@
+
+    <h1></h1>
+
     foreach (var item in Model)
     {
         <p>Item 1</p>
+
+        <div class="catalogue_wrapper">
+            <div class="catalogue_wrapper_left">
+
+                <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
+                    <img src="@item.image" alt="image"
+                         width="120" />
+                </a>
+
+            </div>
+            <div class="catalogue_wrapper_right">
+                <h4>
+                    <a href="/?page=catalogue"></a>
+                    <strong>
+                        @item.title
+                    </strong>
+                </h4>
+
+                @if (item.author == null)
+                {
+                    <p>
+                        by: <u>@item.author</u>;
+                    </p>
+
+                }
+
+                @if (item.year == null)
+                {
+
+                    <p>
+                        @item.year
+                    </p>
+
+                }
+
+
+
+                @if (item.publishing_date == null)
+                {
+
+                    <p>
+                        @item.publishing_date
+                    </p>
+
+                }
+
+
+                @if (item.description == null)
+                {
+                    <p>@item.description.Substring(0, 120)+"..."</p>
+                }
+
+
+
+
+                <p>
+                    <?php
+
+                    $message = $objCatalogue->is_item_available($row['id']) ? 'Available' : 'Not Available';
+                    $out = '<strong>'.$item_cat['name'].'</strong>';
+                    $out .= ': ' . $message;
+                    echo $out;
+                    ?>;
+                </p>
+
+                <p>
+                    <?php
+
+                    $user = Session::getSession(Login::$_login_front);
+                    $objReservation = new Reservation();
+                    $reservation = $objReservation->getReservationsByUserAndItem($user, $row['id']);
+
+                    if(empty($reservation)){
+                    echo Basket::activeButton($row['id']);
+                    }else{
+                    echo '
+                <p><a href="/?page=reservations" class="red">Item already reserved: Please check your reservation</a></p>';
+                }
+
+
+                ?>
+                </p>
+            </div>
+        </div>
     }
 }
 else
