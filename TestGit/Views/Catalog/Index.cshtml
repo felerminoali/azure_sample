@@ -77,15 +77,15 @@
             <div class="catalogue_wrapper_left">
 
                 @{
-                    string path = "~/media/catalogue/";
-                    string path_alt = "~/media/unavailable/";
+                    string path = "media/catalogue/";
+                    string path_alt = "media/unavailable/";
 
                     category cate = db.categories.Single(cat => cat.id == item.category);
 
                     string image = (item.image != null) ? path + item.image : path_alt + cate.name;
                 }
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
-                    <img src="@image" alt="Image_@cate.name"
+                    <img src="~/@image" alt="Image_@cate.name"
                          width="120" />
                 </a>
 
