@@ -28,16 +28,11 @@
                     <tr>
                         <th><label for="library">Library:</label></th>
                         <td>
-
-                            @foreach (var library in (List< TestGit.Models.library>) ViewBag.library)
-                            {
-                                @Html.DropDownList("library", new List<SelectListItem>
-                                {
-                                    new SelectListItem { Text = library.name, Value= ""+library.id},
-                                }, 
-                                "All libraries&hellip;", new { @class = "sel" })
-                            }
-
+                               @Html.DropDownList(
+                                   "library",
+                                   new SelectList(ViewBag.library, "id", "name"),
+                                   "-- All libraries --", new { @class = "sel" }
+                               )
                         </td>
                     </tr>
 
