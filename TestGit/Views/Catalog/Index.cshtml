@@ -15,8 +15,7 @@
                     <tr>
                         <th><label for="search">Library catalog:</label></th>
                         <td>
-                            <input type="text" name="search" value="<?php echo stripslashes($search); ?>" class="fld">
-                            @Html.Editor("search", new { htmlAttributes = new { @class = "fld", @value="hhhh"} })
+                            @Html.TextBox("search", null, new { @class = "fld", placeholder = "Keyword ...", value = "lllll" })
                         </td>
                         <td>
                             <label for="btn_add" class="sbm sbm_blue fl_l">
@@ -28,7 +27,7 @@
                     <tr>
                         <th><label for="library">Library:</label></th>
                         <td>
-                               @Html.DropDownList(
+                            @Html.DropDownList(
                                    "library",
                                    new SelectList(ViewBag.library, "id", "name"),
                                    "-- All libraries --", new { @class = "sel" }
@@ -38,36 +37,22 @@
 
                 </table>
 
-                <ul id="filters">
-                    <li>
+                @if (((List<TestGit.Models.category>)ViewBag.categories).Any())
+                {
 
-                        <input type="checkbox" name="category[]"
-                               id="category_12"
-                               value="12" />
-                        <span>Audio</span>
-                    </li>
-                    <li>
-
-                        <input type="checkbox" name="category[]"
-                               id="category_2"
-                               value="2" />
-                        <span>Books</span>
-                    </li>
-                    <li>
-
-                        <input type="checkbox" name="category[]"
-                               id="category_32"
-                               value="32" />
-                        <span>Periodicals</span>
-                    </li>
-                    <li>
-
-                        <input type="checkbox" name="category[]"
-                               id="category_22"
-                               value="22" />
-                        <span>Video</span>
-                    </li>
-                </ul>
+                    <ul id="filters">
+                        @foreach (var category in (List<TestGit.Models.category>)ViewBag.categories)
+                        {
+                            <li>
+                                <input type="checkbox" name="category[]"
+                                       id="category_" @category.id
+                                       value="@category.id" />
+                                <span>Audio</span>
+                            </li>
+                        }
+                    </ul>
+                }
+                
             </form>
 
         </div>

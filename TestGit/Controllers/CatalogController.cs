@@ -19,6 +19,7 @@ namespace TestGit.Controllers
         {
             List<item> items = db.items.Where(item => item.title.StartsWith(search)).ToList();
             ViewBag.library = db.libraries.ToList();
+            ViewBag.categories = db.categories.ToList();
 
             return View(db.items.ToList());
         }
