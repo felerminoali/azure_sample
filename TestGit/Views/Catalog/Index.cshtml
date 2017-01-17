@@ -6,7 +6,73 @@
 
 <h2>Index</h2>
 
-<p>
+<div class='container'>
+    <div class='section friendly'>
+        <h1><strong>SEARCH | </strong>&nbsp;&nbsp;&nbsp;Catalog</h1>
+        <div class='article'>
+
+            <form action="" method="get">
+                
+                <table cellpadding="0" cellspacing="0" border="0" class="tbl_insert">
+                    <tr>
+                        <th><label for="search">Library catalog:</label></th>
+                        <td>
+                            <input type="text" name="search" value="<?php echo stripslashes($search); ?>" class="fld">
+                        </td>
+                        <td>
+                            <label for="btn_add" class="sbm sbm_blue fl_l">
+                                <input type="submit" id="btn_add" class="btn" value="Search">
+                            </label>
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <th><label for="library">Library:</label></th>
+                        <td>
+                            <select name="library" id="library" class="sel"><option value="">All libraries&hellip;</option><option value="12">Bahagian Perpistakaan, LGCD</option><option value="2">BDA Public Library</option><option value="22">JKR Resource Centre</option><option value="32">Kanowit Public Library</option><option value="42">Kota Sentosa Public Library</option></select>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <ul id="filters">
+                    <li>
+
+                        <input type="checkbox" name="category[]"
+                               id="category_12"
+                               value="12" />
+                        <span>Audio</span>
+                    </li>
+                    <li>
+
+                        <input type="checkbox" name="category[]"
+                               id="category_2"
+                               value="2" />
+                        <span>Books</span>
+                    </li>
+                    <li>
+
+                        <input type="checkbox" name="category[]"
+                               id="category_32"
+                               value="32" />
+                        <span>Periodicals</span>
+                    </li>
+                    <li>
+
+                        <input type="checkbox" name="category[]"
+                               id="category_22"
+                               value="22" />
+                        <span>Video</span>
+                    </li>
+                </ul>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+@*<p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
@@ -88,6 +154,6 @@
             @Html.ActionLink("Delete", "Delete", new { id=item.id })
         </td>
     </tr>
-}
+}*@
 
 </table>
