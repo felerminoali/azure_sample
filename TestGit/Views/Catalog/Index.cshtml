@@ -87,7 +87,7 @@
                     string image = (item.image != null) ? path + item.image : path_alt + cate.name;
                 }
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
-                    <img src="~/media/catalogue/@image" alt="image_@cate"
+                    <img src="~/media/catalogue/@image" alt="image_@cate.name"
                          width="120" />
                 </a>
 
