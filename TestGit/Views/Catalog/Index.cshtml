@@ -77,7 +77,7 @@
             <div class="catalogue_wrapper_left">
 
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
-                    <img src="@item.image" alt="image"
+                    <img src="media/catalogue/@item.image" alt="image"
                          width="120" />
                 </a>
 
@@ -90,7 +90,7 @@
                         </strong>
                     </h4>
 
-                    @if (item.author == null)
+                    @if (item.author != null)
                     {
                         <p>by: <u>@item.author</u></p>
                     }
