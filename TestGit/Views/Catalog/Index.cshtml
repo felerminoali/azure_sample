@@ -16,6 +16,7 @@
                         <th><label for="search">Library catalog:</label></th>
                         <td>
                             <input type="text" name="search" value="<?php echo stripslashes($search); ?>" class="fld">
+                            @Html.Editor("search", new { htmlAttributes = new { @class = "fld", @value="hhhh"} })
                         </td>
                         <td>
                             <label for="btn_add" class="sbm sbm_blue fl_l">
@@ -23,7 +24,6 @@
                             </label>
                         </td>
                     </tr>
-
 
                     <tr>
                         <th><label for="library">Library:</label></th>
