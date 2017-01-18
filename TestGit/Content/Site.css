@@ -58,8 +58,22 @@ th.ta_c{text-align: center}
 .sbm_orange{background:url(/images/sprite.png) repeat-x 0 -30px;border:solid 1px #222}
 .btn{color:#fff;text-decoration:none;background:transparent;border:none;padding:0 15px}
 #frm_pp{display:none}
-.pagination, .paging{list-style:none;width:600px;float:left;background:#efefef;margin-bottom:14px;padding:3px 10px}
-.pagination, .paging li{float:left;margin-right:10px}
+.pagination{list-style:none;width:600px;float:left;background:#efefef;margin-bottom:14px;padding:3px 10px}
+.pagination li{float:left;margin-right:10px}
+
+.pagination > .active > a,
+.pagination > .active > span,
+.pagination > .active > a:hover,
+.pagination > .active > span:hover,
+.pagination > .active > a:focus,
+.pagination > .active > span:focus {
+  z-index: 2;
+  color: #ffffff;
+  cursor: default;
+  background-color: #428bca;
+  border-color: #428bca;
+}
+
 .inactive{color:#aaa}
 .mr_r4{margin-right:4px}
 a:hover,#footer_in a,.add_to_basket:hover{text-decoration:none}
