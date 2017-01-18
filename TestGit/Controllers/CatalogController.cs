@@ -19,7 +19,11 @@ namespace TestGit.Controllers
         // GET: Catalog
         public ActionResult Index(string search, int? library, List<int?> categories, int? page)
         {
-            List<item> items = db.items.Where(item => (item.title.Contains(search) || search == null) && item.library == library).ToList();
+            List<item> items = db.items.Where(
+                item => (item.title.Contains(search) || search == null) && 
+                (item.library == library || library == null)
+            ).ToList();
+
             ViewBag.recordsFound = items.Count;
             //ViewBag.test = categories.Count;
             ViewBag.library = db.libraries.ToList();
