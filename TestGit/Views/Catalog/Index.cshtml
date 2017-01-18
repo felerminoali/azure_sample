@@ -45,12 +45,16 @@
 
                 @if (((List<TestGit.Models.category>)ViewBag.categories).Any())
                 {
+                    var values = Request.QueryString.GetValues("category");
 
-                    string str = Request.QueryString["category"];
+                    foreach (String v in values)
+                    {
+                        <p>v</p>
+                    }
 
                     //string[] array = str.Trim('(', ')').Split(',');
 
-                   <h1> --------> @str</h1>
+                   <h1> @*--------> @str*@</h1>
 
 
                     <ul id="filters">
