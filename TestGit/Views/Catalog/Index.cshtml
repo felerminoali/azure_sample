@@ -82,17 +82,20 @@
 
                     category cate = db.categories.Single(cat => cat.id == item.category);
 
-                    string image = path_alt + cate.image;
-                    int img_width = 0;
-                    if (item.image != null)
-                    {
-                        image = path + item.image;
-                        var file = new FileStream("~/"+image, FileMode.Open);
-                        System.Drawing.Image imageObj = System.Drawing.Image.FromStream(file);
-                       
-                        img_width = (imageObj.Width > 120) ? 120 : imageObj.Width;
-                        
-                    }
+                    //string image = path_alt + cate.image;
+                    //int img_width = 0;
+                    //if (item.image != null)
+                    //{
+                    //    image = path + item.image;
+                    //    var file = new FileStream("~/"+image, FileMode.Open);
+                    //    System.Drawing.Image imageObj = System.Drawing.Image.FromStream(file);
+
+                    //    img_width = (imageObj.Width > 120) ? 120 : imageObj.Width;
+
+                    //}
+
+                    string image = (item.image != null) ? path + item.image : path_alt + cate.image;
+                    int img_width = 120;
                 }
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
                     <img src="~/@image" alt="Image_@cate.name"
@@ -130,7 +133,17 @@
 
                 @if (item.description != null)
                 {
-                    <p>@item.description</p>
+                    int len = 120;
+                    string description = item.description;
+                    if (item.description.Length > len)
+                    {
+                        <p>@description.Substring(0,len)</p>
+                    }
+                    else
+                    {
+                        <p>@description+"..."</p>
+                    }
+
                 }
 
             </div>
