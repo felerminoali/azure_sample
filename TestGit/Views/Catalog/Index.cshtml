@@ -82,11 +82,18 @@
 
                     category cate = db.categories.Single(cat => cat.id == item.category);
 
-                    string image = (item.image != null) ? path + item.image : path_alt + cate.image;
+                    string image = path_alt + cate.image;
+                    int img_width = 0;
+                    if (item.image != null)
+                    {
+                        System.Drawing.Image imageObj = System.Drawing.Image.FromFile("~/"+item.image);
+                        img_width = (imageObj.Width > 120) ? 120 : imageObj.Width;
+                        image = path + item.image;
+                    }
                 }
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
                     <img src="~/@image" alt="Image_@cate.name"
-                         width="120" />
+                         width="@img_width" />
                 </a>
 
             </div>
