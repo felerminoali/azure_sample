@@ -42,8 +42,16 @@
 
                 </table>
 
+
                 @if (((List<TestGit.Models.category>)ViewBag.categories).Any())
                 {
+                   
+                        string str = Request.QueryString["category"].ToString();
+
+                        string[] array = str.Trim('(', ')').Split(',');
+
+                   <h1> --------> @str</h1>
+
 
                     <ul id="filters">
                         @foreach (var category in (List<TestGit.Models.category>)ViewBag.categories)
@@ -53,10 +61,7 @@
                                        id="category_@category.id"
                                        value="@category.id" />
                                 @*stick here*@
-                                @{ 
-//string[] c = Request.QueryString["categories"].ge;
-
-                                }
+                                
                                 <span>@category.name</span>
                             </li>
                         }
