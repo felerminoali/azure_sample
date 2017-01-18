@@ -17,7 +17,7 @@ namespace TestGit.Controllers
         private MyOpacDBContext db = new MyOpacDBContext();
 
         // GET: Catalog
-        public ActionResult Index(string search, int? library, List<int?> categories, int? page)
+        public ActionResult Index(string search, int? library, int?[] categories, int? page)
         {
             List<item> items = db.items.Where(
                 item => (item.title.Contains(search) || search == null) && 
@@ -25,7 +25,7 @@ namespace TestGit.Controllers
             ).ToList();
 
             ViewBag.recordsFound = items.Count;
-            ViewBag.testCount = (categories.Any()) ? categories.Count : 0;
+            //ViewBag.testCount = (categories.Any()) ? categories.Count : 0;
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 
