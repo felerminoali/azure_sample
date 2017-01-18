@@ -58,8 +58,8 @@ th.ta_c{text-align: center}
 .sbm_orange{background:url(/images/sprite.png) repeat-x 0 -30px;border:solid 1px #222}
 .btn{color:#fff;text-decoration:none;background:transparent;border:none;padding:0 15px}
 #frm_pp{display:none}
-.paging{list-style:none;width:600px;float:left;background:#efefef;margin-bottom:14px;padding:3px 10px}
-.paging li{float:left;margin-right:10px}
+.pagination, .paging{list-style:none;width:600px;float:left;background:#efefef;margin-bottom:14px;padding:3px 10px}
+.pagination, .paging li{float:left;margin-right:10px}
 .inactive{color:#aaa}
 .mr_r4{margin-right:4px}
 a:hover,#footer_in a,.add_to_basket:hover{text-decoration:none}
@@ -68,7 +68,6 @@ a:hover,#footer_in a,.add_to_basket:hover{text-decoration:none}
 .catalogue_wrapper img,.tbl_repeat,.tbl_insert{margin-bottom:14px}
 .tbl_insert td,.fld,.fld_price,.sel,.tar,.tar_fixed{padding:3px}
 .dn{display: none}
-
 
 
 
