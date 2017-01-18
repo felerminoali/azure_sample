@@ -1,4 +1,7 @@
-﻿@model IEnumerable<TestGit.Models.item>
+﻿@*@model IEnumerable<TestGit.Models.item>*@
+@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<TestGit.Models.item>
 @using TestGit.Models;
 
 @{
@@ -66,7 +69,7 @@
 {
 
     <div class="paging">
-        @*paginas*@
+        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["searchBy"], library = Request.QueryString["library"], category = Request.QueryString["category"] }))
     </div>
 
     <h1></h1>
