@@ -20,7 +20,7 @@
                     <tr>
                         <th><label for="search">Library catalog:</label></th>
                         <td>
-                            <input type="text" name="search" value="<?php echo stripslashes($search); ?>" class="fld">
+                            <input type="text" name="search" value="@Request.QueryString["search"]" class="fld">
                         </td>
                         <td>
                             <label for="btn_add" class="sbm sbm_blue fl_l">

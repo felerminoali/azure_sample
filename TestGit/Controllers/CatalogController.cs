@@ -24,7 +24,7 @@ namespace TestGit.Controllers
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 
-            return View(items.ToPagedList(page ?? 1, 3));
+            return View(items.ToPagedList(page ?? 1, 6));
         }
 
         // GET: Catalog/Details/5
