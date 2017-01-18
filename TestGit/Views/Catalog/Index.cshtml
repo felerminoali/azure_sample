@@ -47,10 +47,11 @@
                 {
                     var values = Request.QueryString.GetValues("category");
 
-                    foreach (string v in values)
+                    <p>@values.Count()</p>
+                    @*foreach (int v in values)
                     {
                         <p>v</p>
-                    }
+                    }*@
 
                     //string[] array = str.Trim('(', ')').Split(',');
 
@@ -61,7 +62,7 @@
                         @foreach (var category in (List<TestGit.Models.category>)ViewBag.categories)
                         {
                             <li>
-                                <input type="checkbox" name="category[]"
+                                <input type="checkbox" name="category"
                                        id="category_@category.id"
                                        value="@category.id" />
                                 @*stick here*@
