@@ -46,8 +46,12 @@
                 @if (((List<TestGit.Models.category>)ViewBag.categories).Any())
                 {
                     var values = Request.QueryString.GetValues("category");
+                    int disp = (values != null) ? values.Count() : 0;
+                    <h1>
+                        @disp
+                    </h1>
 
-                    
+
                     @*foreach (int v in values)
                     {
                         <p>v</p>
