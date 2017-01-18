@@ -17,7 +17,7 @@ namespace TestGit.Controllers
         private MyOpacDBContext db = new MyOpacDBContext();
 
         // GET: Catalog
-        public ActionResult Index(string search, int? library, int?[] category, int? page)
+        public ActionResult Index(string search, int? library, string category, int? page)
         {
             List<item> items = db.items.Where(
                 item => (item.title.Contains(search) || search == null) && 
