@@ -20,6 +20,7 @@ namespace TestGit.Controllers
         public ActionResult Index(string search, int? library, int? category, int? page)
         {
             List<item> items = db.items.Where(item => item.title.StartsWith(search)).ToList();
+            ViewBag.recordsFound = items.Count;
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 

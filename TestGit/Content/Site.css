@@ -67,11 +67,8 @@ th.ta_c{text-align: center}
 .pagination > .active > span:hover,
 .pagination > .active > a:focus,
 .pagination > .active > span:focus {
-  z-index: 2;
-  color: #ffffff;
   cursor: default;
-  background-color: #428bca;
-  border-color: #428bca;
+  font-weight: bold;
 }
 
 .inactive{color:#aaa}

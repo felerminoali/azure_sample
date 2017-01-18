@@ -69,7 +69,7 @@
 {
 
     <div class="paging">
-        <p>Your search found <strong>@Model.Count</strong> records. </p>
+        <p>Your search found <strong>@ViewBag.recordsFound</strong> records. </p>
     </div>
 
     <h1></h1>
@@ -156,30 +156,6 @@
 
                     <div class="paging">
                         @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"], library = Request.QueryString["library"], category = Request.QueryString["category"] }))
-
-
-                        @*<div class="paging">
-                            <div class="pagination-container">
-                            <ul class="pagination">
-                                <li class="active"><a>1</a></li>
-                                <li><a href="/catalog?page=2">2</a></li>
-                                <li><a href="/catalog?page=3">3</a></li>
-                                <li><a href="/catalog?page=4">4</a></li>
-                                <li><a href="/catalog?page=5">5</a></li>
-                                <li><a href="/catalog?page=6">6</a></li>
-                                <li><a href="/catalog?page=7">7</a></li>
-                                <li class="PagedList-skipToNext"><a href="/catalog?page=2" rel="next">»</a></li>
-                             </ul>
-                            </div>
-                        </div>
-
-                        <ul class="paging">
-                           <li><span>First</span></li>
-                           <li><span>Previous</span></li>
-                           <li><a href="/?page=catalogue&amp;pg=2">Next</a></li>
-                           <li><a href="/?page=catalogue&amp;pg=4">Last</a></li>
-                        </ul>*@
-
                     </div>
                     }
                     else
