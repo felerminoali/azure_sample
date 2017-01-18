@@ -17,10 +17,11 @@ namespace TestGit.Controllers
         private MyOpacDBContext db = new MyOpacDBContext();
 
         // GET: Catalog
-        public ActionResult Index(string search, int? library, int? category, int? page)
+        public ActionResult Index(string search, int? library, List<int?> categories, int? page)
         {
-            List<item> items = db.items.Where(item => item.title.StartsWith(search)).ToList();
+            List<item> items = db.items.Where(item => item.title.Contains(search) && item.library == library).ToList();
             ViewBag.recordsFound = items.Count;
+            ViewBag.test = categories.Count;
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 

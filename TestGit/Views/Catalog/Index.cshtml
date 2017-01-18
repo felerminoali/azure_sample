@@ -9,6 +9,7 @@
     MyOpacDBContext db = new MyOpacDBContext();
 }
 
+<h1>categories @ViewBag.test</h1>
 <div class='container'>
     <div class='section friendly'>
         <h1><strong>SEARCH | </strong>&nbsp;&nbsp;&nbsp;Catalog</h1>
@@ -34,7 +35,7 @@
                         <td>
                             @Html.DropDownList(
                                    "library",
-                                   new SelectList(ViewBag.library, "id", "name"),
+                                   new SelectList(ViewBag.library, "id", "name", Request.QueryString["library"]),
                                    "-- All libraries --", new { @class = "sel" }
                                )
                         </td>
@@ -155,7 +156,7 @@
 
 
                     <div class="paging">
-                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"], library = Request.QueryString["library"], category = Request.QueryString["category"] }))
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"], library = Request.QueryString["library"], category = Request.QueryString["categories"] }))
                     </div>
                     }
                     else
