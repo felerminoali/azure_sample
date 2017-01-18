@@ -57,9 +57,7 @@
                         <p>@value</p>
                     }
 
-                    //string[] array = str.Trim('(', ')').Split(',');
-
-                   <h1> @*--------> @str*@</h1>
+                   
 
 
                     <ul id="filters">
@@ -68,9 +66,12 @@
                             <li>
                                 <input type="checkbox" name="category"
                                        id="category_@category.id"
-                                       value="@category.id" />
-                                @*stick here*@
-                                
+                                       value="@category.id"
+
+                                    @if (values !=null && values.Contains(@category.id.ToString())) {
+                                       @:checked="checked"
+                                    }
+                                 />
                                 <span>@category.name</span>
                             </li>
                         }
