@@ -82,7 +82,7 @@
 
                     category cate = db.categories.Single(cat => cat.id == item.category);
 
-                    string image = (item.image != null) ? path + item.image : path_alt + cate.name;
+                    string image = (item.image != null) ? path + item.image : path_alt + cate.image;
                 }
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
                     <img src="~/@image" alt="Image_@cate.name"
@@ -118,18 +118,18 @@
                 }
 
 
-                @*@if (item.description != null)
-                    {
-                        <p>@item.description.Substring(0, 120)+"..."</p>
-                    }*@
+                @if (item.description != null)
+                {
+                    <p>@item.description</p>
+                }
 
             </div>
         </div>
-                        }
-                    }
-                    else
-                    {
-                        <div class="paging">
-                            <p><strong>No catalogue</strong> found</p>
-                        </div>
-                    }
+       }
+   }
+   else
+       {
+          <div class="paging">
+                <p><strong>No catalogue</strong> found</p>
+          </div>
+   }
