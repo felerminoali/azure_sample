@@ -21,7 +21,7 @@ namespace TestGit.Controllers
         {
             List<item> items = db.items.Where(item => item.title.Contains(search) && item.library == library).ToList();
             ViewBag.recordsFound = items.Count;
-            ViewBag.test = categories.Count;
+            //ViewBag.test = categories.Count;
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 
