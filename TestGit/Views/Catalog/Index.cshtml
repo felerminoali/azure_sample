@@ -53,6 +53,10 @@
                                        id="category_@category.id"
                                        value="@category.id" />
                                 @*stick here*@
+                                @{ 
+//string[] c = Request.QueryString["categories"].ge;
+
+                                }
                                 <span>@category.name</span>
                             </li>
                         }
@@ -155,7 +159,7 @@
 
 
                     <div class="paging">
-                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"], library = Request.QueryString["library"], category = Request.QueryString["categories"] }))
+                        @Html.PagedListPager(Model, page => Url.Action("Index", new { page, search = Request.QueryString["search"], library = Request.QueryString["library"], category = Request.QueryString["category"] }))
                     </div>
                     }
                     else
