@@ -86,11 +86,12 @@
                     int img_width = 0;
                     if (item.image != null)
                     {
-                        var file = new FileStream("~/"+item.image, FileMode.Open);
+                        image = path + item.image;
+                        var file = new FileStream("~/"+image, FileMode.Open);
                         System.Drawing.Image imageObj = System.Drawing.Image.FromStream(file);
                        
                         img_width = (imageObj.Width > 120) ? 120 : imageObj.Width;
-                        image = path + item.image;
+                        
                     }
                 }
                 <a href="/?page=catalogue-item&amp;id=<?php echo $row['id']; ?>">
