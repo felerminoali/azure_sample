@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Collections;
-
+using System.Web.Mvc;
 
 
 namespace TestGit.Models
@@ -106,7 +106,8 @@ namespace TestGit.Models
         }
 
 
-        public static string activeButton(int itemId)
+        //public static string activeButton(int itemId)
+            public static IHtmlString activeButton(int itemId)
         {
             int id;
             string label;
@@ -120,14 +121,13 @@ namespace TestGit.Models
                 label = "Add to reservation";
             }
 
-
             string str = "<a href='#' class='add_to_basket";
             str += (id == 0) ? " red":null;
             str += " ' rel='";
             str += itemId + "_" + id;
             str += "'>" + label + "</a>";
 
-            return str;
+            return new MvcHtmlString(str);
         }
 
     }
