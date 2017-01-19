@@ -22,7 +22,14 @@
     <div id="outer">
         <div id="wrapper">
             <div id="left">
-                @Html.Partial("_BasketLeft")
+                @Request.Url.ToString()
+                @if (true)
+                {
+                    @Html.Partial("_BasketLeft")
+                }
+                
+
+
                 @Html.Partial("_LeftNav")
             </div>
             <div id="right">
