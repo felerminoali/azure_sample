@@ -31,7 +31,7 @@ namespace TestGit.Models
 
             HttpContext.Current.Session["basket"] = items;
 
-            emptyBasket = (HttpContext.Current.Session["basket"] != null) ? true : false;
+            emptyBasket = (HttpContext.Current.Session["basket"] == null) ? true : false;
 
             noItems();
             summarize();
@@ -102,7 +102,7 @@ namespace TestGit.Models
                 str += "<a href='#' class='remove_basket'";
                 str += "rel='" + id + "'>Remove</a>";
             }
-            return str;
+            return new MvcHtmlString(str);
         }
 
 

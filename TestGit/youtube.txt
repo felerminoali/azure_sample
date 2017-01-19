@@ -1,4 +1,7 @@
-﻿http://csharp-video-tutorials.blogspot.com/2013/05/part-8-data-access-in-mvc-using-entity.html
+﻿http://csharp-video-tutorials.blogspot.com/p/aspnet-mvc-tutorial-for-beginners.html
+
+
+http://csharp-video-tutorials.blogspot.com/2013/05/part-8-data-access-in-mvc-using-entity.html
 
 http://csharp-video-tutorials.blogspot.com/2013/05/part-9-generate-hyperlinks-using.html
 
