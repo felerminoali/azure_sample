@@ -29,6 +29,8 @@ namespace TestGit.Controllers
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 
+            Session["Basket"] = "ola sessao";
+
             return View(items.ToPagedList(page ?? 1, 6));
         }
 
@@ -40,6 +42,7 @@ namespace TestGit.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
             item item = db.items.Find(id);
+
             if (item == null)
             {
                 return HttpNotFound();

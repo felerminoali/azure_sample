@@ -186,6 +186,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Basket.cs" />
     <Compile Include="Models\category.cs">
       <DependentUpon>DBContext.tt</DependentUpon>
     </Compile>

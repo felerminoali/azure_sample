@@ -7,6 +7,7 @@
 @{
     ViewBag.Title = "Catalog";
     MyOpacDBContext db = new MyOpacDBContext();
+    Basket basket = new Basket();
 }
 
 <div class='container'>
@@ -154,6 +155,15 @@
                     }
 
                 }
+
+
+                <p>
+                    <strong>Books</strong>: Available;
+                </p>
+
+                <p>
+                    @Basket.activeButton(item.id)
+                </p>
 
             </div>
         </div>
