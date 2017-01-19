@@ -1,24 +1,29 @@
 ﻿@using TestGit.Models;
+@using Microsoft.AspNet.Identity
 
-@{ 
-    Basket basket = new Basket();
-}
-<h2>Your Reservation</h2>
+@if (Request.IsAuthenticated)
+{
+
+    
+        Basket basket = new Basket();
+    
+        <h2>Your Reservation</h2>
 
 
-<dl id="basket_left">
-    <dt>No. of items:</dt>
-    <dd class="bl_ti">
-        <span>
-            @basket.numberOfItems
-        </span>
-    </dd>
-    <dt class="bl_s maximized">
-        <span>
-            @basket.summary
-        </span>
-    </dt>
-</dl>
-<div class="dev br_td">&#160;</div>
-<p><a href="/basket">View </a> | <a href="/reserve">Place Hold</a></p>
-<div class="dev br_td">&#160;</div>
+        <dl id="basket_left">
+            <dt>No. of items:</dt>
+            <dd class="bl_ti">
+                <span>
+                    @basket.numberOfItems
+                </span>
+            </dd>
+            <dt class="bl_s maximized">
+                <span>
+                    @basket.summary
+                </span>
+            </dt>
+        </dl>
+        <div class="dev br_td">&#160;</div>
+        <p><a href="/basket">View </a> | <a href="/reserve">Place Hold</a></p>
+        <div class="dev br_td">&#160;</div>
+        }

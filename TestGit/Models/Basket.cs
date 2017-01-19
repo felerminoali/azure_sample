@@ -31,7 +31,7 @@ namespace TestGit.Models
 
             HttpContext.Current.Session["basket"] = items;
 
-            emptyBasket = (HttpContext.Current.Session["basket"] != null) ? true : false;
+            emptyBasket = (HttpContext.Current.Session["basket"] == null) ? true : false;
 
             noItems();
             summarize();
@@ -66,17 +66,15 @@ namespace TestGit.Models
                 Hashtable basket = (Hashtable)HttpContext.Current.Session["basket"];
                 ICollection Itemkeys = basket.Keys;
 
-                string[] str = new string[basket.Count];
-                int i = 0;
+                List<string> list = new List<string>();
                 foreach (int key in Itemkeys)
                 {
-
                     category category = db.categories.Find(basket[key]);
                     item item = db.items.Find(key);
-
-                    str[i]= category.name + ": ("+ shortenString(item.title, 120)+")";
-                    i++;
+                    list.Add(category.name + ": ("+ shortenString(item.title, 120)+")");
                 }
+
+                string[] str = list.ToArray();
                 summary = "Items: " + string.Join(", ", str);
             }
         }
