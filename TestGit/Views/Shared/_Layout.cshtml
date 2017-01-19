@@ -22,7 +22,7 @@
     <div id="outer">
         <div id="wrapper">
             <div id="left">
-                @Request.Url.ToString()
+                @Request.Url.AbsoluteUri
                 
                     @Html.Partial("_BasketLeft")
                 
