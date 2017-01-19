@@ -20,13 +20,13 @@ namespace TestGit.Models
 
             Hashtable items = new Hashtable();
 
-            items.Add(1, 1);
-            items.Add(2, 1);
-            items.Add(3, 2);
-            items.Add(4, 2);
-            items.Add(5, 2);
-            items.Add(6, 3);
-            items.Add(7, 3);
+            items.Add(1, 2);
+            items.Add(2, 2);
+            items.Add(3, 12);
+            items.Add(4, 12);
+            items.Add(5, 12);
+            items.Add(6, 22);
+            items.Add(7, 22);
 
 
             HttpContext.Current.Session["basket"] = items;
@@ -34,7 +34,7 @@ namespace TestGit.Models
             emptyBasket = (HttpContext.Current.Session["basket"] == null) ? true : false;
 
             noItems();
-            //summarize();
+            summarize();
         }
 
         public void noItems()
