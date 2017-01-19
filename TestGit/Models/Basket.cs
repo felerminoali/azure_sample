@@ -22,7 +22,6 @@ namespace TestGit.Models
 
             items.Add(2, 2);
             items.Add(12, 2);
-            items.Add(22, 12);
             items.Add(32, 12);
             items.Add(42, 12);
             items.Add(52, 22);
