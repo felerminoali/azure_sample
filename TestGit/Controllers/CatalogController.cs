@@ -29,8 +29,6 @@ namespace TestGit.Controllers
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 
-            Session["Basket"] = "ola sessao";
-
             return View(items.ToPagedList(page ?? 1, 6));
         }
 
