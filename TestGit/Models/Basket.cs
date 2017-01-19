@@ -94,7 +94,7 @@ namespace TestGit.Models
         }
 
 
-        public static string removeButton(int id)
+        public static IHtmlString removeButton(int id)
         {
             string str = "";
             if (((Hashtable)HttpContext.Current.Session["basket"]).Contains(id) && HttpContext.Current.Session["basket"] != null)
@@ -102,7 +102,7 @@ namespace TestGit.Models
                 str += "<a href='#' class='remove_basket'";
                 str += "rel='" + id + "'>Remove</a>";
             }
-            return str;
+            return new MvcHtmlString(str);
         }
 
 

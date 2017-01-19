@@ -342,6 +342,7 @@
     <Content Include="Views\Catalog\Details.cshtml" />
     <Content Include="Views\Catalog\Edit.cshtml" />
     <Content Include="Views\Catalog\Index.cshtml" />
+    <Content Include="Views\Shared\_BasketLeft.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
