@@ -20,13 +20,13 @@ namespace TestGit.Models
 
             Hashtable items = new Hashtable();
 
-            items.Add(1, 2);
             items.Add(2, 2);
-            items.Add(3, 12);
-            items.Add(4, 12);
-            items.Add(5, 12);
-            items.Add(6, 22);
-            items.Add(7, 22);
+            items.Add(12, 2);
+            items.Add(22, 12);
+            items.Add(32, 12);
+            items.Add(42, 12);
+            items.Add(52, 22);
+            items.Add(62, 22);
 
 
             HttpContext.Current.Session["basket"] = items;
