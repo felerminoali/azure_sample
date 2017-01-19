@@ -34,7 +34,7 @@ namespace TestGit.Models
             emptyBasket = (HttpContext.Current.Session["basket"] == null) ? true : false;
 
             noItems();
-            summarize();
+            //summarize();
         }
 
         public void noItems()
