@@ -24,8 +24,7 @@ namespace TestGit.Controllers
                 (item.library == library || library == null)
             ).ToList();
 
-            ViewBag.recordsFound = items.Count;
-            //ViewBag.testCount = (categories.Any()) ? categories.Count : 0;
+            ViewBag.recordsFound = (items.Any()) ? items.Count : 0;
             ViewBag.library = db.libraries.ToList();
             ViewBag.categories = db.categories.ToList();
 
