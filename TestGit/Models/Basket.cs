@@ -71,9 +71,12 @@ namespace TestGit.Models
                     //category category = db.categories.Find(basket[key]);
                     //item item = db.items.Find(key);
 
-                    //if (category !=null && item == null) {
-                    //    list.Add(category.name + ": (" + shortenString(item.title, 120) + ")");
-                    //}
+                    category category = db.categories.Single(cat => cat.id == (int) basket[key]);
+                    item item = db.items.Single(i => i.id == key);
+
+                    if (category !=null && item == null) {
+                        list.Add(category.name + ": (" + shortenString(item.title, 120) + ")");
+                    }
 
                     list.Add("item: "+ key+" cate: "+ basket[key]);
                     
