@@ -39,7 +39,10 @@ namespace TestGit.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             item item = db.items.Find(id);
+            category category = db.categories.Find(item.category);
+            ViewBag.category = category;
 
             if (item == null)
             {
