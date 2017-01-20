@@ -33,7 +33,7 @@ namespace TestGit.Controllers
         }
 
         // GET: Catalog/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Item(int? id)
         {
             if (id == null)
             {

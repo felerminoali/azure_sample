@@ -339,7 +339,7 @@
     <Content Include="Views\Reservations\Index.cshtml" />
     <Content Include="Views\Catalog\Create.cshtml" />
     <Content Include="Views\Catalog\Delete.cshtml" />
-    <Content Include="Views\Catalog\Details.cshtml" />
+    <Content Include="Views\Catalog\Item.cshtml" />
     <Content Include="Views\Catalog\Edit.cshtml" />
     <Content Include="Views\Catalog\Index.cshtml" />
     <Content Include="Views\Shared\_BasketLeft.cshtml" />
