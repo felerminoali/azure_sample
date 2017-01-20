@@ -9,7 +9,7 @@
 
 <h1>Catalogue :: @cate.name</h1>
 
-<p>@Model.title</p>
+@*<p>@Model.title</p>*@
 @*<div>
     <h4>item</h4>
     <hr />
@@ -106,7 +106,7 @@
 </div>*@
 
 
-@*<div class="fl_l">
+<div class="fl_l">
 
 
     @{
@@ -123,7 +123,7 @@
     </div>
    
     <div class="rgt">
-        <h3>
+        @*<h3>
             <strong>
                 @Model.title
             </strong>
@@ -150,10 +150,10 @@
         </p>
         }
 
-        @Basket.activeButton(Model.id)
+        @Basket.activeButton(Model.id)*@
         
     </div>
-</div>*@
+</div>
 <p>
     @Html.ActionLink("Back to List", "Index")
 </p>
