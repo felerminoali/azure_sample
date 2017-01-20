@@ -3,11 +3,13 @@
 
 @{
     ViewBag.Title = "Catalog Item";
+
+    category cate = (category)ViewBag.category;
 }
 
-<h1>Catalogue :: @((category)ViewBag.category).name</h1>
+<h1>Catalogue :: @cate.name</h1>
 
-<div>
+@*<div>
     <h4>item</h4>
     <hr />
     <dl class="dl-horizontal">
@@ -100,8 +102,57 @@
         </dd>
 
     </dl>
+</div>*@
+
+
+<div class="fl_l">
+
+
+    @{
+        string path = "media/catalogue/";
+        string path_alt = "media/unavailable/";
+       
+
+        string image = (Model.image != null) ? path + Model.image : path_alt + cate.image;
+        int img_width = 120;
+    }
+    <div class="lft">
+        <img src="~/@image" alt="@cate.name"
+             width="@img_width" />
+    </div>
+   
+    <div class="rgt">
+        <h3>
+            <strong>
+                @Model.title
+            </strong>
+        </h3>
+
+
+       @if(Model.author != null) { 
+        <p>
+            by: <u>@Model.author</u>
+        </p>
+        }
+
+        @if (Model.year != null)
+        {
+        <p>
+         @Model.year   
+        </p>
+        }
+
+        @if (Model.publishing_date != null)
+        {
+        <p>
+           @Model.publishing_date
+        </p>
+        }
+
+        @Basket.activeButton(Model.id)
+        
+    </div>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

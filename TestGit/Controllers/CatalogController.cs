@@ -41,7 +41,7 @@ namespace TestGit.Controllers
             }
 
             item item = db.items.Find(id);
-            category category = db.categories.Find(item.category);
+            category category = db.categories.Single(cat => cat.id == item.category);
             ViewBag.category = category;
 
             if (item == null)
