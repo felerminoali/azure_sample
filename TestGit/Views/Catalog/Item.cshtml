@@ -11,99 +11,99 @@
 
 @*<p>@Model.title</p>*@
 @*<div>
-    <h4>item</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.title)
-        </dt>
+        <h4>item</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.title)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.title)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.title)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.barcode)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.barcode)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.barcode)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.barcode)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.description)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.description)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.description)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.available)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.available)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.available)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.available)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.library)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.library)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.library)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.library)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.image)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.image)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.image)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.image)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.category)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.category)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.category)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.category)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.author)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.author)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.author)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.author)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.year)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.year)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.year)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.year)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.publishing_date)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.publishing_date)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.publishing_date)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.publishing_date)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.edition)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.edition)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.edition)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.edition)
+            </dd>
 
-    </dl>
-</div>*@
+        </dl>
+    </div>*@
 
 
 <div class="fl_l">
@@ -112,7 +112,7 @@
     @{
         string path = "media/catalogue/";
         string path_alt = "media/unavailable/";
-       
+
 
         string image = (Model.image != null) ? path + Model.image : path_alt + cate.image;
         int img_width = 120;
@@ -121,7 +121,7 @@
         <img src="~/@image" alt="@cate.name"
              width="@img_width" />
     </div>
-   
+
     <div class="rgt">
         <h3>
             <strong>
@@ -130,29 +130,34 @@
         </h3>
 
 
-       @if(Model.author != null) { 
-        <p>
-            by: <u>@Model.author</u>
-        </p>
+        @if (Model.author != null)
+        {
+            <p>
+                by: <u>@Model.author</u>
+            </p>
         }
 
         @if (Model.year != null)
         {
-        <p>
-         @Model.year   
-        </p>
+            <p>
+                @Model.year
+            </p>
         }
 
         @if (Model.publishing_date != null)
         {
-        <p>
-           @Model.publishing_date
-        </p>
+            <p>
+                @Model.publishing_date
+            </p>
         }
-
         @Basket.activeButton(Model.id)
-        
     </div>
+    <div class="dev">&#160;</div>
+    @if (Model.description != null)
+    {
+        <p>@Model.description</p>
+    }
+    <div class="dev br_td">&#160;</div>
 </div>
 <p>
     @Html.ActionLink("Back to List", "Index")
