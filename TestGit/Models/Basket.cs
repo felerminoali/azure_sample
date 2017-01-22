@@ -78,7 +78,7 @@ namespace TestGit.Models
                     //    list.Add(category.name + ": (" + shortenString(item.title, 120) + ")");
                     //}
 
-                    list.Add("item: " + shortenString(item.title, 120) + " cate: " + basket[key]);
+                    list.Add("item: " + shortenString(item.title, 10) + " cate: " + basket[key]);
 
                 }
 
