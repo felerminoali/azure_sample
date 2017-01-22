@@ -17,5 +17,8 @@ namespace TestGit.Models
         public int reservation { get; set; }
         public int item { get; set; }
         public byte readyForPickUp { get; set; }
+    
+        public virtual item item1 { get; set; }
+        public virtual reservation reservation1 { get; set; }
     }
 }

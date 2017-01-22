@@ -14,6 +14,13 @@ namespace TestGit.Models
     
     public partial class item
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public item()
+        {
+            this.loans = new HashSet<loan>();
+            this.reservation_items = new HashSet<reservation_items>();
+        }
+    
         public int id { get; set; }
         public string title { get; set; }
         public string barcode { get; set; }
@@ -26,5 +33,12 @@ namespace TestGit.Models
         public Nullable<int> year { get; set; }
         public Nullable<System.DateTime> publishing_date { get; set; }
         public string edition { get; set; }
+    
+        public virtual category category1 { get; set; }
+        public virtual library library1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<loan> loans { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reservation_items> reservation_items { get; set; }
     }
 }

@@ -14,9 +14,18 @@ namespace TestGit.Models
     
     public partial class category
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public category()
+        {
+            this.items = new HashSet<item>();
+        }
+    
         public int id { get; set; }
         public string name { get; set; }
         public int loanPeriod { get; set; }
         public string image { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<item> items { get; set; }
     }
 }

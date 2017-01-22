@@ -18,5 +18,7 @@ namespace TestGit.Models
         public int reservation { get; set; }
         public string comment { get; set; }
         public Nullable<System.DateTime> date_posted { get; set; }
+    
+        public virtual reservation reservation1 { get; set; }
     }
 }

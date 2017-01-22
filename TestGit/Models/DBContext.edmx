@@ -5,21 +5,15 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.categories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="categories">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
-            <PropertyRef Name="loanPeriod" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="loanPeriod" Type="int" Nullable="false" />
           <Property Name="image" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.config' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="config">
           <Key>
             <PropertyRef Name="id" />
@@ -31,31 +25,23 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.config' doe
           <Property Name="email" Type="nvarchar" MaxLength="200" />
           <Property Name="website" Type="nvarchar" MaxLength="250" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.countries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="countries">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
           <Property Name="code" Type="nvarchar" MaxLength="3" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.feedback_comments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="feedback_comments">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="reservation" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="reservation" Type="int" Nullable="false" />
           <Property Name="comment" Type="nvarchar(max)" />
           <Property Name="date_posted" Type="datetime2" Precision="7" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="items">
           <Key>
             <PropertyRef Name="id" />
@@ -73,27 +59,18 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.items' does
           <Property Name="publishing_date" Type="datetime2" Precision="7" />
           <Property Name="edition" Type="nvarchar" MaxLength="100" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.library' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="library">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="contact" Type="nvarchar" MaxLength="55" />
           <Property Name="address" Type="nvarchar(max)" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.lms' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="lms">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="first_name" />
-            <PropertyRef Name="last_name" />
-            <PropertyRef Name="email" />
-            <PropertyRef Name="password" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
@@ -101,17 +78,9 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.lms' does n
           <Property Name="email" Type="nvarchar" MaxLength="150" Nullable="false" />
           <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.loans' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="loans">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="reservation" />
-            <PropertyRef Name="item" />
-            <PropertyRef Name="loandate" />
-            <PropertyRef Name="duedate" />
-            <PropertyRef Name="renewal" />
-            <PropertyRef Name="checked_in" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="reservation" Type="int" Nullable="false" />
@@ -121,14 +90,9 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.loans' does
           <Property Name="renewal" Type="tinyint" Nullable="false" />
           <Property Name="checked_in" Type="tinyint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.reservation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="reservation">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="user" />
-            <PropertyRef Name="dateRevesed" />
-            <PropertyRef Name="canceled" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="user" Type="int" Nullable="false" />
@@ -137,36 +101,18 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.reservation
           <Property Name="until" Type="datetime2" Precision="7" />
           <Property Name="canceled" Type="tinyint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.reservation_items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="reservation_items">
           <Key>
             <PropertyRef Name="reservation" />
             <PropertyRef Name="item" />
-            <PropertyRef Name="readyForPickUp" />
           </Key>
           <Property Name="reservation" Type="int" Nullable="false" />
           <Property Name="item" Type="int" Nullable="false" />
           <Property Name="readyForPickUp" Type="tinyint" Nullable="false" />
         </EntityType>
-        <!--Errors Found During Generation:
-warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="users">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="first_name" />
-            <PropertyRef Name="last_name" />
-            <PropertyRef Name="card_id" />
-            <PropertyRef Name="address_1" />
-            <PropertyRef Name="address_2" />
-            <PropertyRef Name="town" />
-            <PropertyRef Name="county" />
-            <PropertyRef Name="post_code" />
-            <PropertyRef Name="country" />
-            <PropertyRef Name="email" />
-            <PropertyRef Name="password" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="active" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
           <Property Name="first_name" Type="nvarchar" MaxLength="150" Nullable="false" />
@@ -184,120 +130,172 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
           <Property Name="active" Type="tinyint" Nullable="false" />
           <Property Name="hash" Type="nvarchar" MaxLength="255" />
         </EntityType>
+        <Association Name="FK__feedback___reser__3E52440B">
+          <End Role="reservation" Type="Self.reservation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="feedback_comments" Type="Self.feedback_comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="reservation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="feedback_comments">
+              <PropertyRef Name="reservation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__items__category__398D8EEE">
+          <End Role="categories" Type="Self.categories" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="items" Type="Self.items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="items">
+              <PropertyRef Name="category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__items__library__38996AB5">
+          <End Role="library" Type="Self.library" Multiplicity="0..1" />
+          <End Role="items" Type="Self.items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="library">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="items">
+              <PropertyRef Name="library" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__loans__item__3D5E1FD2">
+          <End Role="items" Type="Self.items" Multiplicity="1" />
+          <End Role="loans" Type="Self.loans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="loans">
+              <PropertyRef Name="item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__loans__reservati__3C69FB99">
+          <End Role="reservation" Type="Self.reservation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="loans" Type="Self.loans" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="reservation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="loans">
+              <PropertyRef Name="reservation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__picku__37A5467C">
+          <End Role="library" Type="Self.library" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="library">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="pickuplocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__reser__3A81B327">
+          <End Role="reservation" Type="Self.reservation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reservation_items" Type="Self.reservation_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="reservation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation_items">
+              <PropertyRef Name="reservation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservatio__item__3B75D760">
+          <End Role="items" Type="Self.items" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reservation_items" Type="Self.reservation_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation_items">
+              <PropertyRef Name="item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservatio__user__36B12243">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ModelsStoreContainer">
-          <EntitySet Name="categories" EntityType="Self.categories" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [categories].[id] AS [id], 
-    [categories].[name] AS [name], 
-    [categories].[loanPeriod] AS [loanPeriod], 
-    [categories].[image] AS [image]
-    FROM [dbo].[categories] AS [categories]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="config" EntityType="Self.config" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [config].[id] AS [id], 
-    [config].[max_renewal] AS [max_renewal], 
-    [config].[sys_name] AS [sys_name], 
-    [config].[contact] AS [contact], 
-    [config].[email] AS [email], 
-    [config].[website] AS [website]
-    FROM [dbo].[config] AS [config]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="countries" EntityType="Self.countries" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [countries].[id] AS [id], 
-    [countries].[name] AS [name], 
-    [countries].[code] AS [code]
-    FROM [dbo].[countries] AS [countries]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="feedback_comments" EntityType="Self.feedback_comments" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [feedback_comments].[id] AS [id], 
-    [feedback_comments].[reservation] AS [reservation], 
-    [feedback_comments].[comment] AS [comment], 
-    [feedback_comments].[date_posted] AS [date_posted]
-    FROM [dbo].[feedback_comments] AS [feedback_comments]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="items" EntityType="Self.items" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [items].[id] AS [id], 
-    [items].[title] AS [title], 
-    [items].[barcode] AS [barcode], 
-    [items].[description] AS [description], 
-    [items].[available] AS [available], 
-    [items].[library] AS [library], 
-    [items].[image] AS [image], 
-    [items].[category] AS [category], 
-    [items].[author] AS [author], 
-    [items].[year] AS [year], 
-    [items].[publishing_date] AS [publishing_date], 
-    [items].[edition] AS [edition]
-    FROM [dbo].[items] AS [items]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="library" EntityType="Self.library" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [library].[id] AS [id], 
-    [library].[name] AS [name], 
-    [library].[contact] AS [contact], 
-    [library].[address] AS [address]
-    FROM [dbo].[library] AS [library]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="lms" EntityType="Self.lms" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [lms].[id] AS [id], 
-    [lms].[first_name] AS [first_name], 
-    [lms].[last_name] AS [last_name], 
-    [lms].[email] AS [email], 
-    [lms].[password] AS [password]
-    FROM [dbo].[lms] AS [lms]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="loans" EntityType="Self.loans" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [loans].[id] AS [id], 
-    [loans].[reservation] AS [reservation], 
-    [loans].[item] AS [item], 
-    [loans].[loandate] AS [loandate], 
-    [loans].[duedate] AS [duedate], 
-    [loans].[renewal] AS [renewal], 
-    [loans].[checked_in] AS [checked_in]
-    FROM [dbo].[loans] AS [loans]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="reservation" EntityType="Self.reservation" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [reservation].[id] AS [id], 
-    [reservation].[user] AS [user], 
-    [reservation].[dateRevesed] AS [dateRevesed], 
-    [reservation].[pickuplocation] AS [pickuplocation], 
-    [reservation].[until] AS [until], 
-    [reservation].[canceled] AS [canceled]
-    FROM [dbo].[reservation] AS [reservation]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="reservation_items" EntityType="Self.reservation_items" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [reservation_items].[reservation] AS [reservation], 
-    [reservation_items].[item] AS [item], 
-    [reservation_items].[readyForPickUp] AS [readyForPickUp]
-    FROM [dbo].[reservation_items] AS [reservation_items]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="users" EntityType="Self.users" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [users].[id] AS [id], 
-    [users].[first_name] AS [first_name], 
-    [users].[last_name] AS [last_name], 
-    [users].[card_id] AS [card_id], 
-    [users].[address_1] AS [address_1], 
-    [users].[address_2] AS [address_2], 
-    [users].[town] AS [town], 
-    [users].[county] AS [county], 
-    [users].[post_code] AS [post_code], 
-    [users].[country] AS [country], 
-    [users].[email] AS [email], 
-    [users].[password] AS [password], 
-    [users].[date] AS [date], 
-    [users].[active] AS [active], 
-    [users].[hash] AS [hash]
-    FROM [dbo].[users] AS [users]</DefiningQuery>
-          </EntitySet>
+          <EntitySet Name="categories" EntityType="Self.categories" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="config" EntityType="Self.config" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="countries" EntityType="Self.countries" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="feedback_comments" EntityType="Self.feedback_comments" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="items" EntityType="Self.items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="library" EntityType="Self.library" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="lms" EntityType="Self.lms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="loans" EntityType="Self.loans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reservation" EntityType="Self.reservation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="reservation_items" EntityType="Self.reservation_items" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__feedback___reser__3E52440B" Association="Self.FK__feedback___reser__3E52440B">
+            <End Role="reservation" EntitySet="reservation" />
+            <End Role="feedback_comments" EntitySet="feedback_comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__items__category__398D8EEE" Association="Self.FK__items__category__398D8EEE">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="items" EntitySet="items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__items__library__38996AB5" Association="Self.FK__items__library__38996AB5">
+            <End Role="library" EntitySet="library" />
+            <End Role="items" EntitySet="items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__loans__item__3D5E1FD2" Association="Self.FK__loans__item__3D5E1FD2">
+            <End Role="items" EntitySet="items" />
+            <End Role="loans" EntitySet="loans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__loans__reservati__3C69FB99" Association="Self.FK__loans__reservati__3C69FB99">
+            <End Role="reservation" EntitySet="reservation" />
+            <End Role="loans" EntitySet="loans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__picku__37A5467C" Association="Self.FK__reservati__picku__37A5467C">
+            <End Role="library" EntitySet="library" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__reser__3A81B327" Association="Self.FK__reservati__reser__3A81B327">
+            <End Role="reservation" EntitySet="reservation" />
+            <End Role="reservation_items" EntitySet="reservation_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservatio__item__3B75D760" Association="Self.FK__reservatio__item__3B75D760">
+            <End Role="items" EntitySet="items" />
+            <End Role="reservation_items" EntitySet="reservation_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservatio__user__36B12243" Association="Self.FK__reservatio__user__36B12243">
+            <End Role="users" EntitySet="users" />
+            <End Role="reservation" EntitySet="reservation" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
@@ -307,13 +305,12 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
         <EntityType Name="category">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
-            <PropertyRef Name="loanPeriod" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="loanPeriod" Type="Int32" Nullable="false" />
           <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="items" Relationship="Self.FK__items__category__398D8EEE" FromRole="categories" ToRole="items" />
         </EntityType>
         <EntityType Name="config">
           <Key>
@@ -329,7 +326,6 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
         <EntityType Name="country">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
@@ -338,12 +334,12 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
         <EntityType Name="feedback_comments">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="reservation" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="reservation" Type="Int32" Nullable="false" />
           <Property Name="comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="date_posted" Type="DateTime" Precision="7" />
+          <NavigationProperty Name="reservation1" Relationship="Self.FK__feedback___reser__3E52440B" FromRole="feedback_comments" ToRole="reservation" />
         </EntityType>
         <EntityType Name="item">
           <Key>
@@ -361,24 +357,25 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
           <Property Name="year" Type="Int32" />
           <Property Name="publishing_date" Type="DateTime" Precision="7" />
           <Property Name="edition" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="category1" Relationship="Self.FK__items__category__398D8EEE" FromRole="items" ToRole="categories" />
+          <NavigationProperty Name="library1" Relationship="Self.FK__items__library__38996AB5" FromRole="items" ToRole="library" />
+          <NavigationProperty Name="loans" Relationship="Self.FK__loans__item__3D5E1FD2" FromRole="items" ToRole="loans" />
+          <NavigationProperty Name="reservation_items" Relationship="Self.FK__reservatio__item__3B75D760" FromRole="items" ToRole="reservation_items" />
         </EntityType>
         <EntityType Name="library">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="name" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="contact" Type="String" MaxLength="55" FixedLength="false" Unicode="true" />
           <Property Name="address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="items" Relationship="Self.FK__items__library__38996AB5" FromRole="library" ToRole="items" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservati__picku__37A5467C" FromRole="library" ToRole="reservation" />
         </EntityType>
         <EntityType Name="lm">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="first_name" />
-            <PropertyRef Name="last_name" />
-            <PropertyRef Name="email" />
-            <PropertyRef Name="password" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="first_name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
@@ -389,12 +386,6 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
         <EntityType Name="loan">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="reservation" />
-            <PropertyRef Name="item" />
-            <PropertyRef Name="loandate" />
-            <PropertyRef Name="duedate" />
-            <PropertyRef Name="renewal" />
-            <PropertyRef Name="checked_in" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="reservation" Type="Int32" Nullable="false" />
@@ -403,13 +394,12 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
           <Property Name="duedate" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="renewal" Type="Byte" Nullable="false" />
           <Property Name="checked_in" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="item1" Relationship="Self.FK__loans__item__3D5E1FD2" FromRole="loans" ToRole="items" />
+          <NavigationProperty Name="reservation1" Relationship="Self.FK__loans__reservati__3C69FB99" FromRole="loans" ToRole="reservation" />
         </EntityType>
         <EntityType Name="reservation">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="user" />
-            <PropertyRef Name="dateRevesed" />
-            <PropertyRef Name="canceled" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="user" Type="Int32" Nullable="false" />
@@ -417,33 +407,26 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
           <Property Name="pickuplocation" Type="Int32" />
           <Property Name="until" Type="DateTime" Precision="7" />
           <Property Name="canceled" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="feedback_comments" Relationship="Self.FK__feedback___reser__3E52440B" FromRole="reservation" ToRole="feedback_comments" />
+          <NavigationProperty Name="library" Relationship="Self.FK__reservati__picku__37A5467C" FromRole="reservation" ToRole="library" />
+          <NavigationProperty Name="loans" Relationship="Self.FK__loans__reservati__3C69FB99" FromRole="reservation" ToRole="loans" />
+          <NavigationProperty Name="reservation_items" Relationship="Self.FK__reservati__reser__3A81B327" FromRole="reservation" ToRole="reservation_items" />
+          <NavigationProperty Name="user1" Relationship="Self.FK__reservatio__user__36B12243" FromRole="reservation" ToRole="users" />
         </EntityType>
         <EntityType Name="reservation_items">
           <Key>
             <PropertyRef Name="reservation" />
             <PropertyRef Name="item" />
-            <PropertyRef Name="readyForPickUp" />
           </Key>
           <Property Name="reservation" Type="Int32" Nullable="false" />
           <Property Name="item" Type="Int32" Nullable="false" />
           <Property Name="readyForPickUp" Type="Byte" Nullable="false" />
+          <NavigationProperty Name="item1" Relationship="Self.FK__reservatio__item__3B75D760" FromRole="reservation_items" ToRole="items" />
+          <NavigationProperty Name="reservation1" Relationship="Self.FK__reservati__reser__3A81B327" FromRole="reservation_items" ToRole="reservation" />
         </EntityType>
         <EntityType Name="user">
           <Key>
             <PropertyRef Name="id" />
-            <PropertyRef Name="first_name" />
-            <PropertyRef Name="last_name" />
-            <PropertyRef Name="card_id" />
-            <PropertyRef Name="address_1" />
-            <PropertyRef Name="address_2" />
-            <PropertyRef Name="town" />
-            <PropertyRef Name="county" />
-            <PropertyRef Name="post_code" />
-            <PropertyRef Name="country" />
-            <PropertyRef Name="email" />
-            <PropertyRef Name="password" />
-            <PropertyRef Name="date" />
-            <PropertyRef Name="active" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
           <Property Name="first_name" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
@@ -460,7 +443,126 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
           <Property Name="date" Type="DateTime" Nullable="false" Precision="7" />
           <Property Name="active" Type="Byte" Nullable="false" />
           <Property Name="hash" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="reservations" Relationship="Self.FK__reservatio__user__36B12243" FromRole="users" ToRole="reservation" />
         </EntityType>
+        <Association Name="FK__items__category__398D8EEE">
+          <End Role="categories" Type="Self.category" Multiplicity="0..1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="items" Type="Self.item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="categories">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="items">
+              <PropertyRef Name="category" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__feedback___reser__3E52440B">
+          <End Role="reservation" Type="Self.reservation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="feedback_comments" Type="Self.feedback_comments" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="reservation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="feedback_comments">
+              <PropertyRef Name="reservation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__items__library__38996AB5">
+          <End Role="library" Type="Self.library" Multiplicity="0..1" />
+          <End Role="items" Type="Self.item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="library">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="items">
+              <PropertyRef Name="library" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__loans__item__3D5E1FD2">
+          <End Role="items" Type="Self.item" Multiplicity="1" />
+          <End Role="loans" Type="Self.loan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="loans">
+              <PropertyRef Name="item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservatio__item__3B75D760">
+          <End Role="items" Type="Self.item" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reservation_items" Type="Self.reservation_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="items">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation_items">
+              <PropertyRef Name="item" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__picku__37A5467C">
+          <End Role="library" Type="Self.library" Multiplicity="0..1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="library">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="pickuplocation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__loans__reservati__3C69FB99">
+          <End Role="reservation" Type="Self.reservation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="loans" Type="Self.loan" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="reservation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="loans">
+              <PropertyRef Name="reservation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservati__reser__3A81B327">
+          <End Role="reservation" Type="Self.reservation" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="reservation_items" Type="Self.reservation_items" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="reservation">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation_items">
+              <PropertyRef Name="reservation" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__reservatio__user__36B12243">
+          <End Role="users" Type="Self.user" Multiplicity="1" />
+          <End Role="reservation" Type="Self.reservation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="reservation">
+              <PropertyRef Name="user" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="MyOpacDBContext" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="categories" EntityType="Self.category" />
           <EntitySet Name="configs" EntityType="Self.config" />
@@ -473,6 +575,42 @@ warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does
           <EntitySet Name="reservations" EntityType="Self.reservation" />
           <EntitySet Name="reservation_items" EntityType="Self.reservation_items" />
           <EntitySet Name="users" EntityType="Self.user" />
+          <AssociationSet Name="FK__items__category__398D8EEE" Association="Self.FK__items__category__398D8EEE">
+            <End Role="categories" EntitySet="categories" />
+            <End Role="items" EntitySet="items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__feedback___reser__3E52440B" Association="Self.FK__feedback___reser__3E52440B">
+            <End Role="reservation" EntitySet="reservations" />
+            <End Role="feedback_comments" EntitySet="feedback_comments" />
+          </AssociationSet>
+          <AssociationSet Name="FK__items__library__38996AB5" Association="Self.FK__items__library__38996AB5">
+            <End Role="library" EntitySet="libraries" />
+            <End Role="items" EntitySet="items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__loans__item__3D5E1FD2" Association="Self.FK__loans__item__3D5E1FD2">
+            <End Role="items" EntitySet="items" />
+            <End Role="loans" EntitySet="loans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservatio__item__3B75D760" Association="Self.FK__reservatio__item__3B75D760">
+            <End Role="items" EntitySet="items" />
+            <End Role="reservation_items" EntitySet="reservation_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__picku__37A5467C" Association="Self.FK__reservati__picku__37A5467C">
+            <End Role="library" EntitySet="libraries" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
+          <AssociationSet Name="FK__loans__reservati__3C69FB99" Association="Self.FK__loans__reservati__3C69FB99">
+            <End Role="reservation" EntitySet="reservations" />
+            <End Role="loans" EntitySet="loans" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservati__reser__3A81B327" Association="Self.FK__reservati__reser__3A81B327">
+            <End Role="reservation" EntitySet="reservations" />
+            <End Role="reservation_items" EntitySet="reservation_items" />
+          </AssociationSet>
+          <AssociationSet Name="FK__reservatio__user__36B12243" Association="Self.FK__reservatio__user__36B12243">
+            <End Role="users" EntitySet="users" />
+            <End Role="reservation" EntitySet="reservations" />
+          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>

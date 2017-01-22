@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.categories' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="categories">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+      <PropertyRef Name="loanPeriod" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="loanPeriod" Type="int" Nullable="false" />
+    <Property Name="image" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.config' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="config">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="max_renewal" Type="nvarchar" MaxLength="100" />
+    <Property Name="sys_name" Type="nvarchar" MaxLength="200" />
+    <Property Name="contact" Type="nvarchar" MaxLength="200" />
+    <Property Name="email" Type="nvarchar" MaxLength="200" />
+    <Property Name="website" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.countries' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="countries">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="code" Type="nvarchar" MaxLength="3" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.feedback_comments' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="feedback_comments">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="reservation" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="reservation" Type="int" Nullable="false" />
+    <Property Name="comment" Type="nvarchar(max)" />
+    <Property Name="date_posted" Type="datetime2" Precision="7" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="items">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="title" Type="nvarchar" MaxLength="250" />
+    <Property Name="barcode" Type="nvarchar" MaxLength="100" />
+    <Property Name="description" Type="nvarchar(max)" />
+    <Property Name="available" Type="tinyint" />
+    <Property Name="library" Type="int" />
+    <Property Name="image" Type="nvarchar" MaxLength="100" />
+    <Property Name="category" Type="int" />
+    <Property Name="author" Type="nvarchar" MaxLength="250" />
+    <Property Name="year" Type="int" />
+    <Property Name="publishing_date" Type="datetime2" Precision="7" />
+    <Property Name="edition" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.library' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="library">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="name" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="contact" Type="nvarchar" MaxLength="55" />
+    <Property Name="address" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.lms' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="lms">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="first_name" />
+      <PropertyRef Name="last_name" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="password" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.loans' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="loans">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="reservation" />
+      <PropertyRef Name="item" />
+      <PropertyRef Name="loandate" />
+      <PropertyRef Name="duedate" />
+      <PropertyRef Name="renewal" />
+      <PropertyRef Name="checked_in" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="reservation" Type="int" Nullable="false" />
+    <Property Name="item" Type="int" Nullable="false" />
+    <Property Name="loandate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="duedate" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="renewal" Type="tinyint" Nullable="false" />
+    <Property Name="checked_in" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.reservation' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="reservation">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="user" />
+      <PropertyRef Name="dateRevesed" />
+      <PropertyRef Name="canceled" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="user" Type="int" Nullable="false" />
+    <Property Name="dateRevesed" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="pickuplocation" Type="int" />
+    <Property Name="until" Type="datetime2" Precision="7" />
+    <Property Name="canceled" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.reservation_items' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="reservation_items">
+    <Key>
+      <PropertyRef Name="reservation" />
+      <PropertyRef Name="item" />
+      <PropertyRef Name="readyForPickUp" />
+    </Key>
+    <Property Name="reservation" Type="int" Nullable="false" />
+    <Property Name="item" Type="int" Nullable="false" />
+    <Property Name="readyForPickUp" Type="tinyint" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'db9983d20e14b74389b5d8a6fc0186c299.dbo.users' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="first_name" />
+      <PropertyRef Name="last_name" />
+      <PropertyRef Name="card_id" />
+      <PropertyRef Name="address_1" />
+      <PropertyRef Name="address_2" />
+      <PropertyRef Name="town" />
+      <PropertyRef Name="county" />
+      <PropertyRef Name="post_code" />
+      <PropertyRef Name="country" />
+      <PropertyRef Name="email" />
+      <PropertyRef Name="password" />
+      <PropertyRef Name="date" />
+      <PropertyRef Name="active" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="first_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="last_name" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="card_id" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="address_1" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="address_2" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="town" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="county" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="post_code" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="country" Type="int" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="date" Type="datetime2" Precision="7" Nullable="false" />
+    <Property Name="active" Type="tinyint" Nullable="false" />
+    <Property Name="hash" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityContainer Name="ModelsStoreContainer">
+    <EntitySet Name="categories" EntityType="Self.categories" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [categories].[id] AS [id], 
+    [categories].[name] AS [name], 
+    [categories].[loanPeriod] AS [loanPeriod], 
+    [categories].[image] AS [image]
+    FROM [dbo].[categories] AS [categories]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="config" EntityType="Self.config" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [config].[id] AS [id], 
+    [config].[max_renewal] AS [max_renewal], 
+    [config].[sys_name] AS [sys_name], 
+    [config].[contact] AS [contact], 
+    [config].[email] AS [email], 
+    [config].[website] AS [website]
+    FROM [dbo].[config] AS [config]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="countries" EntityType="Self.countries" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [countries].[id] AS [id], 
+    [countries].[name] AS [name], 
+    [countries].[code] AS [code]
+    FROM [dbo].[countries] AS [countries]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="feedback_comments" EntityType="Self.feedback_comments" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [feedback_comments].[id] AS [id], 
+    [feedback_comments].[reservation] AS [reservation], 
+    [feedback_comments].[comment] AS [comment], 
+    [feedback_comments].[date_posted] AS [date_posted]
+    FROM [dbo].[feedback_comments] AS [feedback_comments]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="items" EntityType="Self.items" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [items].[id] AS [id], 
+    [items].[title] AS [title], 
+    [items].[barcode] AS [barcode], 
+    [items].[description] AS [description], 
+    [items].[available] AS [available], 
+    [items].[library] AS [library], 
+    [items].[image] AS [image], 
+    [items].[category] AS [category], 
+    [items].[author] AS [author], 
+    [items].[year] AS [year], 
+    [items].[publishing_date] AS [publishing_date], 
+    [items].[edition] AS [edition]
+    FROM [dbo].[items] AS [items]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="library" EntityType="Self.library" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [library].[id] AS [id], 
+    [library].[name] AS [name], 
+    [library].[contact] AS [contact], 
+    [library].[address] AS [address]
+    FROM [dbo].[library] AS [library]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="lms" EntityType="Self.lms" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [lms].[id] AS [id], 
+    [lms].[first_name] AS [first_name], 
+    [lms].[last_name] AS [last_name], 
+    [lms].[email] AS [email], 
+    [lms].[password] AS [password]
+    FROM [dbo].[lms] AS [lms]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="loans" EntityType="Self.loans" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [loans].[id] AS [id], 
+    [loans].[reservation] AS [reservation], 
+    [loans].[item] AS [item], 
+    [loans].[loandate] AS [loandate], 
+    [loans].[duedate] AS [duedate], 
+    [loans].[renewal] AS [renewal], 
+    [loans].[checked_in] AS [checked_in]
+    FROM [dbo].[loans] AS [loans]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="reservation" EntityType="Self.reservation" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [reservation].[id] AS [id], 
+    [reservation].[user] AS [user], 
+    [reservation].[dateRevesed] AS [dateRevesed], 
+    [reservation].[pickuplocation] AS [pickuplocation], 
+    [reservation].[until] AS [until], 
+    [reservation].[canceled] AS [canceled]
+    FROM [dbo].[reservation] AS [reservation]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="reservation_items" EntityType="Self.reservation_items" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [reservation_items].[reservation] AS [reservation], 
+    [reservation_items].[item] AS [item], 
+    [reservation_items].[readyForPickUp] AS [readyForPickUp]
+    FROM [dbo].[reservation_items] AS [reservation_items]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="users" EntityType="Self.users" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [users].[id] AS [id], 
+    [users].[first_name] AS [first_name], 
+    [users].[last_name] AS [last_name], 
+    [users].[card_id] AS [card_id], 
+    [users].[address_1] AS [address_1], 
+    [users].[address_2] AS [address_2], 
+    [users].[town] AS [town], 
+    [users].[county] AS [county], 
+    [users].[post_code] AS [post_code], 
+    [users].[country] AS [country], 
+    [users].[email] AS [email], 
+    [users].[password] AS [password], 
+    [users].[date] AS [date], 
+    [users].[active] AS [active], 
+    [users].[hash] AS [hash]
+    FROM [dbo].[users] AS [users]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

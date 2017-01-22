@@ -4,18 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d13f5a0b39094be183a47ac822b43cb7" Name="Diagram1">
-        <EntityTypeShape EntityType="Models.category" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.config" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.country" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.feedback_comments" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.item" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.library" Width="1.5" PointX="4.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.lm" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.loan" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.reservation" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.reservation_items" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Models.user" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="ac1809bae11c45f49523899cb2f9a921" Name="Diagram1">
+        <EntityTypeShape EntityType="Models.category" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.config" Width="1.5" PointX="5.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.country" Width="1.5" PointX="7.75" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.feedback_comments" Width="1.5" PointX="8.25" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.item" Width="1.5" PointX="3" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.library" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.lm" Width="1.5" PointX="0.75" PointY="11.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.loan" Width="1.5" PointX="11.25" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.reservation" Width="1.5" PointX="6" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.reservation_items" Width="1.5" PointX="8.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Models.user" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Models.FK__items__category__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__feedback___reser__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__items__library__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__loans__item__3D5E1FD2" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__reservatio__item__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__reservati__picku__37A5467C" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__loans__reservati__3C69FB99" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__reservati__reser__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="Models.FK__reservatio__user__36B12243" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

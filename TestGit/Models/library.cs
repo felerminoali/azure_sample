@@ -14,9 +14,21 @@ namespace TestGit.Models
     
     public partial class library
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public library()
+        {
+            this.items = new HashSet<item>();
+            this.reservations = new HashSet<reservation>();
+        }
+    
         public int id { get; set; }
         public string name { get; set; }
         public string contact { get; set; }
         public string address { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<item> items { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<reservation> reservations { get; set; }
     }
 }

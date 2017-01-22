@@ -21,5 +21,8 @@ namespace TestGit.Models
         public System.DateTime duedate { get; set; }
         public byte renewal { get; set; }
         public byte checked_in { get; set; }
+    
+        public virtual item item1 { get; set; }
+        public virtual reservation reservation1 { get; set; }
     }
 }
