@@ -6,8 +6,7 @@
 
 @{
     ViewBag.Title = "Catalog";
-    MyOpacDBContext db = new MyOpacDBContext();
-    Basket basket = new Basket();
+    //Basket basket = new Basket();
 }
 
 <div class='container'>
@@ -90,7 +89,7 @@
                     string path = "media/catalogue/";
                     string path_alt = "media/unavailable/";
 
-                    category cate = db.categories.Single(cat => cat.id == item.category);
+                    //category cate = db.categories.Single(cat => cat.id == item.category);
 
                     //string image = path_alt + cate.image;
                     //int img_width = 0;
@@ -104,11 +103,13 @@
 
                     //}
 
-                    string image = (item.image != null) ? path + item.image : path_alt + cate.image;
+
+                    //string image = (item.image != null) ? path + item.image : path_alt + cate.image;
+                    string image = (item.image != null) ? path + item.image : path_alt + item.category1.image;
                     int img_width = 120;
                 }
                 <a href="/catalog/item/@item.id">
-                    <img src="~/@image" alt="Image_@cate.name"
+                    <img src="~/@image" alt="Image_@item.category1.image"
                          width="@img_width" />
                 </a>
 
