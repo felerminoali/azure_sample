@@ -28,10 +28,9 @@
                         <a href="/catalogue/item/@item.id">
                             @item.title
                         </a>
-
                     </td>
-                    @*<td class="ta_r">
-                        @Html.DisplayFor(modelItem => item.category1.name)
+                   <td class="ta_r">
+                        @item.category1.name
                     </td>
                     <td class="ta_r">
                         22
@@ -41,7 +40,7 @@
                     </td>
                     <td class="ta_r">
                         @Basket.removeButton(item.id)
-                    </td>*@
+                    </td>
                     
                 </tr>
             }
