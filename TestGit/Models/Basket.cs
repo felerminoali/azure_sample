@@ -68,7 +68,7 @@ namespace TestGit.Models
                 List<string> list = new List<string>();
                 foreach (int key in Itemkeys)
                 {
-                    category category = db.categories.Find(Int32.Parse(basket[key].ToString()));
+                    category category = db.categories.Find(2);
                     item item = db.items.Find(key);
 
                     //category category = db.categories.Single(cat => cat.id == (int) basket[key]);
