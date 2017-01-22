@@ -10,22 +10,22 @@ namespace TestGit.Models
 {
     public class Basket
     {
-        //public instCatalogue;
+        private MyOpacDBContext db;
         public bool emptyBasket;
         public int numberOfItems;
         public string summary;
 
         public Basket()
         {
-
+            db = new MyOpacDBContext();
             Hashtable items = new Hashtable();
 
-            items.Add(2, 2);
-            items.Add(12, 2);
-            items.Add(32, 12);
-            items.Add(42, 12);
-            items.Add(52, 22);
-            items.Add(62, 22);
+            items.Add(2, null);
+            items.Add(12, null);
+            items.Add(32, null);
+            items.Add(42, null);
+            items.Add(52, null);
+            items.Add(62, null);
 
 
             HttpContext.Current.Session["basket"] = items;
@@ -60,19 +60,16 @@ namespace TestGit.Models
             
             if (!emptyBasket)
             {
-                MyOpacDBContext db = new MyOpacDBContext();
-
                 Hashtable basket = (Hashtable)HttpContext.Current.Session["basket"];
                 ICollection Itemkeys = basket.Keys;
 
                 List<string> list = new List<string>();
                 foreach (int key in Itemkeys)
                 {
-                    category category = db.categories.Find(2);
                     item item = db.items.Find(key);
 
-                    if (category !=null && item != null) {
-                        list.Add(category.name + ": (" + shortenString(item.title, 15) + ")");
+                    if (item != null) {
+                        list.Add(item.category1.name + ": (" + shortenString(item.title, 15) + ")");
                     }
 
                 }
