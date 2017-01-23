@@ -67,9 +67,10 @@ namespace TestGit.Models
                 foreach (int key in Itemkeys)
                 {
                     item item = db.items.Find(key);
+                    category category = db.categories.Find(basket[key]);
 
                     if (item != null) {
-                        list.Add(item.category1.name + ": (" + shortenString(item.title, 15) + ")");
+                        list.Add(category.name + ": (" + shortenString(item.title, 15) + ")");
                     }
 
                 }
