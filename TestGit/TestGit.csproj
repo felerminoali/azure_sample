@@ -235,6 +235,7 @@
     <Compile Include="Models\reservation_items.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Session.cs" />
     <Compile Include="Models\user.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>

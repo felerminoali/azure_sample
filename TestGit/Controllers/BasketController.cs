@@ -65,9 +65,11 @@ namespace TestGit.Controllers
                 {
                     case 0:
                         value = 1;
+                        TestGit.Models.Session.removeItem(id);
                         break;
                     case 1:
                         value = 0;
+                        TestGit.Models.Session.setItem(id, item.category1.id);
                         break;
                 }
 
@@ -78,7 +80,10 @@ namespace TestGit.Controllers
 
         
         public ActionResult SmallRefresh() {
-            var model = new { bl_ti = 1, bl_s = "test"};
+
+            Basket basket = new Basket();
+
+            var model = new { bl_ti = basket.numberOfItems, bl_s = basket.summary};
             return Json(model, JsonRequestBehavior.AllowGet);
         }
     }
