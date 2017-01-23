@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewBag.Title = "Place reservation";
+}
+
+<h1>Place reservation</h1>
+
+<form action="" method="post" id="frm_ph">
+    @*modificar aqui*@
+    <input type="hidden" name="user" value="1">
+
+    <table cellpadding="0" cellspacing="0" border="0" class="tbl_insert">
+
+
+        <tr>
+            <th><label for="library">Library:</label></th>
+            <td>
+                @Html.DropDownList(
+                                   "library",
+                                   new SelectList(ViewBag.library, "id", "name"),
+                                   "-- All libraries --", new { @class = "sel" }
+                               )
+            </td>
+        </tr>
+
+        <tr>
+            <th>
+                <label for="notes">Notes: </label>
+            </th>
+            <td>
+                <textarea name='notes' id='notes' rows="15" cols="50"></textarea><br />
+            </td>
+        </tr>
+
+
+        <tr>
+            <th>&#160;</th>
+            <td>
+                <label for="btn" class="sbm sbm_blue fl_l">
+                    <input type="submit" id="btn"
+                           class="btn" value="Submit" />
+                </label>
+            </td>
+        </tr>
+
+    </table>
+</form>

@@ -32,14 +32,14 @@ namespace TestGit.Controllers
         }
 
         // GET: Catalog/Details/5
-        public ActionResult Item(int? id)
+        public ActionResult Item(int? ID)
         {
-            if (id == null)
+            if (ID == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            item item = db.items.Find(id);
+            item item = db.items.Find(ID);
             category category = db.categories.Single(cat => cat.id == item.category);
             ViewBag.category = category;
 

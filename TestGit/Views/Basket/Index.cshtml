@@ -25,9 +25,8 @@
             {
                 <tr>
                     <td>
-                        <a href="/catalogue/item/@item.id">
-                            @item.title
-                        </a>
+                        @Html.ActionLink(@item.title, "item", "catalog", new {ID = item.id})
+
                     </td>
                    <td class="ta_r">
                         @item.category1.name
@@ -49,7 +48,6 @@
 
         <div class="dev br_td">&#160;</div>
         <div class="sbm sbm_blue fl_r">
-            @*<a href="/basket/reserve" class="btn">Place Hold</a>*@
             @Html.ActionLink("Place Hold", "Reserve", "Basket", null, new { @class = "btn" })
         </div>
 

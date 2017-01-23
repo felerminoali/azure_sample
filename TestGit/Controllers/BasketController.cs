@@ -27,5 +27,23 @@ namespace TestGit.Controllers
 
             return View(list);
         }
+
+        // GET: Basket/Reserve
+        public ActionResult Reserve() {
+            ViewBag.library = db.libraries.ToList();
+            return View();
+            
+        }
+
+        // POST: Basket/Reserve
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //public ActionResult Reserve()
+        //{
+
+        //    return View();
+        //}
     }
 }
