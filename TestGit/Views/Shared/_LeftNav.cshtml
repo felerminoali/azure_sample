@@ -6,20 +6,14 @@
     <div class="dev br_td">&nbsp;</div>
     <ul id="navigation">
         <li>
-            <a href="/catalogue">
-                Catalogue
-            </a>
+            @Html.ActionLink("Catalogue", "Index", "Catalog")
         </li>
         <li>
-            <a href="/loans">
-                Loans
-            </a>
+            @Html.ActionLink("Loans", "Index", "Loans")
         </li>
 
         <li>
-            <a href="/account">
-                My Account
-            </a>
+            @Html.ActionLink("Loans", "Index", "Account")
         </li>
     </ul>
 }
