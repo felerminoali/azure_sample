@@ -181,7 +181,7 @@ $(document).ready(function () {
     function refreshSmallBasket() {
 
         $.ajax({
-            url: '/mod/basket_small_refresh.php',
+            url: '/Basket/SmallRefresh',
             dataType: 'json',
             success: function (data) {
 
@@ -204,7 +204,7 @@ $(document).ready(function () {
             var item = param.split("_");
             $.ajax({
                 type: 'POST',
-                url: '/Basket/Mod',
+                url: '/Basket/Add',
                 dataType: 'json',
                 data: ({id: item[0], job: item[1]}),
                 success: function (data) {

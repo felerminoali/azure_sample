@@ -52,7 +52,7 @@ namespace TestGit.Controllers
 
 
         [HttpPost]
-        public ActionResult Mod(int job, int id)
+        public ActionResult Add(int job, int id)
         {
 
             item item = db.items.Find(id);
@@ -73,6 +73,12 @@ namespace TestGit.Controllers
 
             }
             var model = new { job = value };
+            return Json(model, JsonRequestBehavior.AllowGet);
+        }
+
+        [HttpPost]
+        public ActionResult SmallRefresh() {
+            var model = new { bl_ti = 1, bl_s = "test"};
             return Json(model, JsonRequestBehavior.AllowGet);
         }
     }
