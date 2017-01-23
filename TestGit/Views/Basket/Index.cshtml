@@ -25,7 +25,9 @@
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(@item.title, "Item", "Catalog", new {ID = item.id})
+                        <a href="@Url.Action("Item", "Catalog", new {ID = item.id})">
+                            @item.title 
+                        </a>
                     </td>
                    <td class="ta_r">
                         @item.category1.name
