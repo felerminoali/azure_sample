@@ -275,6 +275,7 @@
       <LastGenOutput>DbContext.cs</LastGenOutput>
     </Content>
     <Content Include="mycustompage.htm" />
+    <Content Include="Scripts\basket.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Readme.md" />
