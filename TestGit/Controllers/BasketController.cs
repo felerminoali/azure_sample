@@ -76,7 +76,7 @@ namespace TestGit.Controllers
             return Json(model, JsonRequestBehavior.AllowGet);
         }
 
-        [HttpPost]
+        
         public ActionResult SmallRefresh() {
             var model = new { bl_ti = 1, bl_s = "test"};
             return Json(model, JsonRequestBehavior.AllowGet);
