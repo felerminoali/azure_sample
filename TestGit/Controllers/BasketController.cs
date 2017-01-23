@@ -65,11 +65,11 @@ namespace TestGit.Controllers
                 {
                     case 0:
                         value = 1;
-                        TestGit.Models.Session.removeItem(id);
+                        TestGit.Models.CustomSession.removeItem(id);
                         break;
                     case 1:
                         value = 0;
-                        TestGit.Models.Session.setItem(id, item.category1.id);
+                        TestGit.Models.CustomSession.setItem(id, item.category1.id);
                         break;
                 }
 

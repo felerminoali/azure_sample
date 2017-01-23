@@ -6,7 +6,7 @@ using System.Collections;
 
 namespace TestGit.Models
 {
-    public class Session
+    public class CustomSession
     {
         public static void setItem(int itemID, int category) {
 
