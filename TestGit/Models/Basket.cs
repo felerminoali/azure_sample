@@ -20,12 +20,12 @@ namespace TestGit.Models
             db = new MyOpacDBContext();
             Hashtable items = new Hashtable();
 
-            items.Add(2, null);
-            items.Add(12, null);
-            items.Add(32, null);
-            items.Add(42, null);
-            items.Add(52, null);
-            items.Add(62, null);
+            items.Add(2, 2);
+            items.Add(12, 2);
+            items.Add(32, 12);
+            items.Add(42, 12);
+            items.Add(52, 22);
+            items.Add(62, 22);
 
 
             HttpContext.Current.Session["basket"] = items;
