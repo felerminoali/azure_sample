@@ -10,14 +10,14 @@ namespace TestGit.Models
 {
     public class Basket
     {
-        private MyOpacDBContext db;
+
         public bool emptyBasket;
         public int numberOfItems;
         public string summary;
 
         public Basket()
         {
-            db = new MyOpacDBContext();
+
             Hashtable items = new Hashtable();
 
             items.Add(2, 2);
@@ -57,11 +57,13 @@ namespace TestGit.Models
 
         public void summarize()
         {
-            
+
             if (!emptyBasket)
             {
                 Hashtable basket = (Hashtable)HttpContext.Current.Session["basket"];
                 ICollection Itemkeys = basket.Keys;
+
+                MyOpacDBContext db = new MyOpacDBContext();
 
                 List<string> list = new List<string>();
                 foreach (int key in Itemkeys)
@@ -69,7 +71,8 @@ namespace TestGit.Models
                     item item = db.items.Find(key);
                     category category = db.categories.Find(basket[key]);
 
-                    if (item != null) {
+                    if (item != null)
+                    {
                         list.Add(category.name + ": (" + shortenString(item.title, 15) + ")");
                     }
 
@@ -80,7 +83,7 @@ namespace TestGit.Models
             }
         }
 
-        
+
 
         private string shortenString(string str, int length)
         {
@@ -104,9 +107,7 @@ namespace TestGit.Models
             return new MvcHtmlString(str);
         }
 
-
-        //public static string activeButton(int itemId)
-            public static IHtmlString activeButton(int itemId)
+        public static IHtmlString activeButton(int itemId)
         {
             int id;
             string label;
@@ -115,13 +116,14 @@ namespace TestGit.Models
                 id = 0;
                 label = "Remove from reservation";
             }
-            else {
+            else
+            {
                 id = 1;
                 label = "Add to reservation";
             }
 
             string str = "<a href='#' class='add_to_basket";
-            str += (id == 0) ? " red":null;
+            str += (id == 0) ? " red" : null;
             str += " ' rel='";
             str += itemId + "_" + id;
             str += "'>" + label + "</a>";
