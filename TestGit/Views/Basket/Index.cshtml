@@ -49,7 +49,8 @@
 
         <div class="dev br_td">&#160;</div>
         <div class="sbm sbm_blue fl_r">
-            <a href="/basket/reserve" class="btn">Place Hold</a>
+            @*<a href="/basket/reserve" class="btn">Place Hold</a>*@
+            @Html.ActionLink("Place Hold", "Reserve", "Basket", null, new { @class = "btn" })
         </div>
 
         <div class="fl_l">
