@@ -18,20 +18,19 @@ namespace TestGit.Models
         public Basket()
         {
 
-            Hashtable items = new Hashtable();
+            //Hashtable items = new Hashtable();
 
-            items.Add(2, 2);
-            items.Add(12, 2);
-            items.Add(32, 12);
-            items.Add(42, 12);
-            items.Add(52, 22);
-            items.Add(62, 22);
+            //items.Add(2, 2);
+            //items.Add(12, 2);
+            //items.Add(32, 12);
+            //items.Add(42, 12);
+            //items.Add(52, 22);
+            //items.Add(62, 22);
 
 
-            HttpContext.Current.Session["basket"] = items;
+            //HttpContext.Current.Session["basket"] = items;
 
             emptyBasket = (HttpContext.Current.Session["basket"] == null) ? true : false;
-
             noItems();
             summarize();
         }
@@ -61,6 +60,7 @@ namespace TestGit.Models
             if (!emptyBasket)
             {
                 Hashtable basket = (Hashtable)HttpContext.Current.Session["basket"];
+                //var basket = HttpContext.Current.Session["basket"] as Hashtable;
                 ICollection Itemkeys = basket.Keys;
 
                 MyOpacDBContext db = new MyOpacDBContext();
