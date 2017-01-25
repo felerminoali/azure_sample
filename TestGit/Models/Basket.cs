@@ -111,25 +111,32 @@ namespace TestGit.Models
         {
             int id;
             string label;
-            if (((Hashtable)HttpContext.Current.Session["basket"]).Contains(itemId) && HttpContext.Current.Session["basket"] != null)
+
+            if (HttpContext.Current.Session["basket"] != null)
             {
-                id = 0;
-                label = "Remove from reservation";
-            }
-            else
-            {
-                id = 1;
-                label = "Add to reservation";
+                if (((Hashtable)HttpContext.Current.Session["basket"]).Contains(itemId))
+                {
+                    id = 0;
+                    label = "Remove from reservation";
+                    return new MvcHtmlString(anchorWrap(itemId, id, label));
+                }
+
             }
 
+            id = 1;
+            label = "Add to reservation";
+
+            return new MvcHtmlString(anchorWrap(itemId, id, label));
+        }
+
+        private static string anchorWrap(int itemId, int id, string label)
+        {
             string str = "<a href='#' class='add_to_basket";
             str += (id == 0) ? " red" : null;
             str += " ' rel='";
             str += itemId + "_" + id;
             str += "'>" + label + "</a>";
-
-            return new MvcHtmlString(str);
+            return str;
         }
-
     }
 }
