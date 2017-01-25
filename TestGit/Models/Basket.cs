@@ -18,18 +18,6 @@ namespace TestGit.Models
         public Basket()
         {
 
-            //Hashtable items = new Hashtable();
-
-            //items.Add(2, 2);
-            //items.Add(12, 2);
-            //items.Add(32, 12);
-            //items.Add(42, 12);
-            //items.Add(52, 22);
-            //items.Add(62, 22);
-
-
-            //HttpContext.Current.Session["basket"] = items;
-
             emptyBasket = (HttpContext.Current.Session["basket"] == null) ? true : false;
             noItems();
             summarize();

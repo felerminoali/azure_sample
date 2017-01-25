@@ -165,7 +165,7 @@ $(document).ready(function () {
         var item = $(this).attr('rel');
         $.ajax({
             type: 'POST',
-            url: '/mod/basket_remove.php',
+            url: '/basket/RemoveItem',
             dataType: 'html',
             data: ({id: item}),
             success: function () {
@@ -233,7 +233,7 @@ $(document).ready(function () {
 
     function refreshBigBasket() {
         $.ajax({
-            url: '/mod/basket_view.php',
+            url: '/Basket/BasketView',
             dataType: 'html',
             success: function (data) {
                 $('#big_basket').html(data);
