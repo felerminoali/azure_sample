@@ -83,8 +83,8 @@ namespace TestGit.Controllers
 
             Basket basket = new Basket();
 
-            //var model = new { bl_ti = basket.numberOfItems, bl_s = basket.summary};
-            var model = new { bl_ti = "1", bl_s = "Summary" };
+            var model = new { bl_ti = basket.numberOfItems, bl_s = basket.summary };
+            //var model = new { bl_ti = "1", bl_s = "Summary" };
             return Json(model, JsonRequestBehavior.AllowGet);
         }
     }
