@@ -10,12 +10,16 @@ namespace TestGit.Models
     {
         public static void setItem(int itemID, int category) {
 
+
             Hashtable items = (Hashtable)HttpContext.Current.Session["basket"];
 
             if (items == null) { 
                 items = new Hashtable();
             }
+
             items.Add(itemID, category);
+
+            HttpContext.Current.Session["basket"] = items;
 
         }
 
