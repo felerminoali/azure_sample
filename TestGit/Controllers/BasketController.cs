@@ -65,11 +65,11 @@ namespace TestGit.Controllers
                 {
                     case 0:
                         value = 1;
-                        TestGit.Models.CustomSession.removeItem(id);
+                        CustomSession.removeItem(id);
                         break;
                     case 1:
                         value = 0;
-                        TestGit.Models.CustomSession.setItem(id, item.category1.id);
+                        CustomSession.setItem(id, item.category1.id);
                         break;
                 }
 
@@ -83,7 +83,8 @@ namespace TestGit.Controllers
 
             Basket basket = new Basket();
 
-            var model = new { bl_ti = basket.numberOfItems, bl_s = basket.summary};
+            //var model = new { bl_ti = basket.numberOfItems, bl_s = basket.summary};
+            var model = new { bl_ti = "1", bl_s = "Summary" };
             return Json(model, JsonRequestBehavior.AllowGet);
         }
     }
