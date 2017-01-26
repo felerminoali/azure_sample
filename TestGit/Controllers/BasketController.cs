@@ -14,8 +14,12 @@ namespace TestGit.Controllers
         // GET: Basket
         public ActionResult Index()
         {
+            Hashtable basket = new Hashtable();
+            if (Session["basket"] != null)
+            {
+                basket = (Hashtable)Session["basket"];
+            }
 
-            Hashtable basket = (Hashtable)Session["basket"];
             ICollection Itemkeys = basket.Keys;
 
             List<item> list = new List<item>();
@@ -94,7 +98,23 @@ namespace TestGit.Controllers
         }
 
         public ActionResult BasketView() {
-            return PartialView("_basketView");
+            //return PartialView("_basketView");
+            Hashtable basket = new Hashtable();
+            if (Session["basket"] != null)
+            {
+                basket = (Hashtable)Session["basket"];
+            }
+
+            ICollection Itemkeys = basket.Keys;
+
+            List<item> list = new List<item>();
+            foreach (int key in Itemkeys)
+            {
+                item item = db.items.Find(key);
+                list.Add(item);
+            }
+
+            return View("Index",list);
         }
     }
 }
