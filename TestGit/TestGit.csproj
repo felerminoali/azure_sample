@@ -348,7 +348,7 @@
     <Content Include="Views\Shared\_BasketLeft.cshtml" />
     <Content Include="Views\Basket\Index.cshtml" />
     <Content Include="Views\Basket\Reserve.cshtml" />
-    <Content Include="Views\Shared\_basketView.cshtml" />
+    <Content Include="Views\Shared\_BigBasket.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

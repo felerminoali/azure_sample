@@ -97,7 +97,7 @@ namespace TestGit.Controllers
             CustomSession.removeItem(id);
         }
 
-        public ActionResult BasketView() {
+        public ActionResult BigBasket() {
             
             Hashtable basket = new Hashtable();
             if (Session["basket"] != null)
@@ -114,7 +114,7 @@ namespace TestGit.Controllers
                 list.Add(item);
             }
 
-            return PartialView("_basketView", list);
+            return PartialView("_BigBasket", list);
         }
     }
 }

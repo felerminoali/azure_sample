@@ -233,7 +233,7 @@ $(document).ready(function () {
 
     function refreshBigBasket() {
         $.ajax({
-            url: '/Basket/BasketView',
+            url: '/Basket/BigBasket',
             dataType: 'html',
             success: function (data) {
                 $('#big_basket').html(data);
