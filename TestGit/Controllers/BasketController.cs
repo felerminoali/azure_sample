@@ -98,7 +98,7 @@ namespace TestGit.Controllers
         }
 
         public ActionResult BasketView() {
-            //return PartialView("_basketView");
+            
             Hashtable basket = new Hashtable();
             if (Session["basket"] != null)
             {
@@ -114,7 +114,7 @@ namespace TestGit.Controllers
                 list.Add(item);
             }
 
-            return View("Index",list);
+            return PartialView("_basketView", list);
         }
     }
 }

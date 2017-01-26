@@ -1,3 +1,63 @@
-﻿
+﻿@model IEnumerable<TestGit.Models.item>
+@using TestGit.Models;
 
-<h1>ola</h1>
+@{
+    Layout = null;
+}
+
+<h1>My Reservation</h1>
+
+@if (Model.Any())
+{
+
+    <div id="big_basket">
+
+        <table cellpadding="0" cellspacing="0" border="0" class="tbl_repeat">
+            <tr>
+                <th>Item</th>
+                <th class="ta_r">Category</th>
+                <th class="ta_r col_15">Estimation waiting days</th>
+                <th class="ta_r col_15">Estimation collect date</th>
+                <th class="ta_r col_15">Remove</th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <a href="@Url.Action("Item", "Catalog", new {ID = item.id})">
+                            @item.title
+                        </a>
+                    </td>
+                    <td class="ta_r">
+                        @item.category1.name
+                    </td>
+                    <td class="ta_r">
+                        22
+                    </td>
+                    <td class="ta_r">
+                        10/11/2017
+                    </td>
+                    <td class="ta_r">
+                        @Basket.removeButton(item.id)
+                    </td>
+
+                </tr>
+            }
+
+        </table>
+
+        <div class="dev br_td">&#160;</div>
+        <div class="sbm sbm_blue fl_r">
+            @Html.ActionLink("Place Hold", "Reserve", "Basket", null, new { @class = "btn" })
+        </div>
+
+        <div class="fl_l">
+            <a href="javascript:history.go(-1)">Go back</a>
+        </div>
+    </div>
+}
+else
+{
+    <p>Your reservation is currently empty</p>
+}
