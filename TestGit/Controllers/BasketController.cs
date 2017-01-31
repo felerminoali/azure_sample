@@ -14,6 +14,13 @@ namespace TestGit.Controllers
         // GET: Basket
         public ActionResult Index()
         {
+            List<item> list = getBasketItems();
+
+            return View(list);
+        }
+
+        private List<item> getBasketItems()
+        {
             Hashtable basket = new Hashtable();
             if (Session["basket"] != null)
             {
@@ -29,7 +36,7 @@ namespace TestGit.Controllers
                 list.Add(item);
             }
 
-            return View(list);
+            return list;
         }
 
         // GET: Basket/Reserve
@@ -45,12 +52,16 @@ namespace TestGit.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Reserve(string library, string notes)
+        public ActionResult Reserve(int user, int library, string notes)
         {
 
-            //if () {
+            if (ModelState.IsValid)
+            {
+                CustomSession.clear("basket");
+                return RedirectToAction("Index");
+            }
 
-            //}
+            ViewBag.library = db.libraries.ToList();
             return View();
         }
 
@@ -98,21 +109,8 @@ namespace TestGit.Controllers
         }
 
         public ActionResult BigBasket() {
-            
-            Hashtable basket = new Hashtable();
-            if (Session["basket"] != null)
-            {
-                basket = (Hashtable)Session["basket"];
-            }
 
-            ICollection Itemkeys = basket.Keys;
-
-            List<item> list = new List<item>();
-            foreach (int key in Itemkeys)
-            {
-                item item = db.items.Find(key);
-                list.Add(item);
-            }
+            List<item> list = getBasketItems();
 
             return PartialView("_BigBasket", list);
         }
