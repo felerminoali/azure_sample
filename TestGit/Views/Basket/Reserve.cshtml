@@ -17,8 +17,8 @@
             <td>
                 @Html.DropDownList(
                                    "library",
-                                   new SelectList(ViewBag.library, "id", "name"),
-                                   "-- All libraries --", new { @class = "sel" }
+                                   new SelectList(ViewBag.library, "id", "name", 2),
+                                   null, new { @class = "sel" }
                                )
             </td>
         </tr>
